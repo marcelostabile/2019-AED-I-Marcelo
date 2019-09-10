@@ -14,44 +14,44 @@ public class Parcial1 {
          5 Imprimir por pantalla la lista devuelta en el método anterior */
         
         /**
-         * Instanciamos el hospital.
+         * Instanciamos el padron de afiliados.
          */
         PadronAfiliados padronAfiliados = new PadronAfiliados();
-        
+
         /**
          * Cargar lista de afiliados.
          * 
-         * Separamos los campos.
-         * Creamos un afiliado a partir de cada linea: cédula, nombre, apellido.
-         * Crear nodo e insertarlo en la lista.
+         * Registro de Afiliado: cédula, nombre, apellido.
          */
         String[] lineasPadron = ManejadorArchivosGenerico.leerArchivo("src/parcial1/padron2.txt");
-
+        
         for (String linea : lineasPadron) {
             String[] c = linea.split(",");
+            
             IAfiliado afiNuevo = new Afiliado(Integer.parseInt(c[0]), c[1], c[2]);
             INodo<IAfiliado> nodoAfiNuevo = new Nodo(afiNuevo.getCedula(), afiNuevo);
+            
             padronAfiliados.padronAfiliados.insertar(nodoAfiNuevo);
         }
         
         /**
          * Cargar listas de consultas agendadas.
+         * 
+         * Registro de Consulta: cédula afiliado, fecha, especialidad, ci médico, resultado
          */
         String[] lineasAgendadas = ManejadorArchivosGenerico.leerArchivo("src/parcial1/agendadas2.txt");
-
-        // Etiqueta del nodo de consulta.
-        int id1 = 0;
         
+        // Etiqueta del nodo de consulta.
+        int idCon1 = 0;    
         for (String linea : lineasAgendadas) {
-            
             String[] c = linea.split(",");
+            
+            // Cédula del afiliado, Id del Resultado y Creación de Consulta.
             int afiCI = Integer.parseInt(c[0]);
             int resultadoId = Integer.parseInt(c[4]);
             IConsulta conAux = new Consulta(c[1], c[2], Integer.parseInt(c[3]), resultadoId);
-
-            // Creo un nodo de tipo consulta (para luego agregarlo a la lista).
-            INodo<IConsulta> nodoConsulta = new Nodo(id1, conAux);
-            id1 += 1;
+            INodo<IConsulta> nodoConsulta = new Nodo(idCon1, conAux);
+            idCon1 += 1;
 
             // Buscar afiliado en el padron cargado.
             INodo<IAfiliado> nodoAfi = padronAfiliados.padronAfiliados.buscar(afiCI);
@@ -69,10 +69,8 @@ public class Parcial1 {
         String[] lineasHisto = ManejadorArchivosGenerico.leerArchivo("src/parcial1/historicas.txt");
 
         // Etiqueta del nodo de consulta.
-        int id2 = 0;
-        
+        int idCon2 = 0;
         for (String linea : lineasHisto) {
-            
             String[] c = linea.split(",");
 
             // Cédula del afiliado, Id del Resultado y Creación de Consulta.
@@ -80,9 +78,8 @@ public class Parcial1 {
             int resultadoId = Integer.parseInt(c[4]);
             IConsulta conAux = new Consulta(c[1], c[2], Integer.parseInt(c[3]), resultadoId);
 
-            // Creo un nodo de tipo consulta (para luego agregarlo a la lista).
-            INodo<IConsulta> nodoConsulta = new Nodo(id2, conAux);
-            id2 += 1;
+            INodo<IConsulta> nodoConsulta = new Nodo(idCon2, conAux);
+            idCon2 += 1;
 
             // Buscar afiliado en el padron cargado.
             INodo<IAfiliado> nodoAfi = padronAfiliados.padronAfiliados.buscar(afiCI);
@@ -95,69 +92,26 @@ public class Parcial1 {
         }
         
         /**
-         * Imprimir estadisticas iniciales.
+         * Imprimir estadísticas iniciales.
          */
-        int totalConAnotadas = 0;
-        int totalConHistoricas = 0;
-
-        INodo<IAfiliado> nodoAfiliado = padronAfiliados.padronAfiliados.getPrimero();
-        while (nodoAfiliado != null) { 
-            
-            // Obtener consultas del afiliado.
-            ILista<IConsulta> listaConsultasAnotadas = nodoAfiliado.getDato().getConsultasAnotadas();
-            ILista<IConsulta> listaConsultasHistoricas = nodoAfiliado.getDato().getConsultasHistoricas();
-            
-            // Sumar en el total de consultas.
-            totalConAnotadas += listaConsultasAnotadas.cantElementos();
-            totalConHistoricas += listaConsultasHistoricas.cantElementos();
-            
-            nodoAfiliado = nodoAfiliado.getSiguiente();
-        }
-        
         System.out.println();
-        System.out.println("ESTADISTICAS INICIALES");
-        System.out.println();
-        System.out.println("Cantidad de afiliados: " + padronAfiliados.padronAfiliados.cantElementos());
-        System.out.println("Cant. Consultas Agendadas: " + totalConAnotadas);
-        System.out.println("Cant. Consultas Históricas: " + totalConHistoricas);
-        int totalConsultas = totalConAnotadas + totalConHistoricas;
-        System.out.println("Total de Consultas: " + totalConsultas);
-        System.out.println();
+        padronAfiliados.imprimirEstadisticas();
         
         /**
          * EJECUTANDO LA ACTUALIZACIÓN DE CONSULTAS.
          */
+        System.out.println("ACTUALIZACIÓN DE CONSULTAS !!!");
+        System.out.println();
         ILista <IAfiliado> padronDeudores = padronAfiliados.actualizarConsultas();
         
         /**
          * Imprimir estadisticas finales.
          */
-        totalConAnotadas = 0;
-        totalConHistoricas = 0;
+        padronAfiliados.imprimirEstadisticas();
 
-        nodoAfiliado = padronAfiliados.padronAfiliados.getPrimero();
-        while (nodoAfiliado != null) {
-            
-            // Obtener consultas del afiliado.
-            ILista<IConsulta> listaConsultasAnotadas = nodoAfiliado.getDato().getConsultasAnotadas();
-            ILista<IConsulta> listaConsultasHistoricas = nodoAfiliado.getDato().getConsultasHistoricas();
-
-            // Sumar en el total de consultas.
-            totalConAnotadas += listaConsultasAnotadas.cantElementos();
-            totalConHistoricas += listaConsultasHistoricas.cantElementos();
-            
-            nodoAfiliado = nodoAfiliado.getSiguiente();
-        }
-        
-        System.out.println("ESTADISTICAS FINALES");
-        System.out.println();
-        System.out.println("Cantidad de afiliados: " + padronAfiliados.padronAfiliados.cantElementos());
-        System.out.println("Cant. Consultas Agendadas: " + totalConAnotadas);
-        System.out.println("Cant. Consultas Históricas: " + totalConHistoricas);
-        totalConsultas = totalConAnotadas + totalConHistoricas;
-        System.out.println("Total de Consultas: " + totalConsultas);
-        System.out.println();
-        
+        /**
+         * Imprimir deudores.
+         */
         System.out.println("DEUDORES");
         System.out.println();
         
@@ -182,10 +136,8 @@ public class Parcial1 {
                 System.out.println("CI: " + afiliadoDeudor.getCedula() + 
                         " Fecha: " + nodoConsulta.getDato().getFechaConsulta() + 
                         " (" + afiliadoDeudor.getNombre() + " " + afiliadoDeudor.getApellido() + ")");
-                
                 nodoConsulta = nodoConsulta.getSiguiente();
             }
-            
             nodoAfiliadoDeudor = nodoAfiliadoDeudor.getSiguiente();
         }
         System.out.println("Cant. de Deudores: " + padronDeudores.cantElementos());
@@ -214,10 +166,15 @@ public class Parcial1 {
                         "   Esp: " + especialidad);
                 nodoAfiliadoEspecialidad = nodoAfiliadoEspecialidad.getSiguiente();
             }
+            System.out.println();
+            System.out.println("Orden ascendente por cédula.");
         }
         else {
             System.out.println("No hay registros.");
         }
         System.out.println();
     }
+    
+    
+    
 }
