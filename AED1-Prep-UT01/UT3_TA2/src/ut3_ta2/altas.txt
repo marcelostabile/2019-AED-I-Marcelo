@@ -1,0 +1,119 @@
+296878,Juan ,ESPERANZA,Gonzalez,Silva ,3721.4,1
+549095,Sofia,ALEJANDRA,Perez,Arcos,3917.85,1
+438430,Pedro,Aldo ,Rodriguez,Arcos,8995.15,1
+901307,Andres ,ADELMO,Machado ,Barrios ,8610.85,0
+980900,Julieta ,Elvira,Melines,Avogadro ,5303.08,0
+483110,Gonzalo ,EFRÉN,Severo ,Fernández,1781.07,1
+23507,Gaston ,ALBERTO,Perez,Baldi ,9715.28,0
+65659,Micaela ,AÍDA,Gumer,Perez,3184.49,0
+557596,Roberto ,EZEQUIEL,Vazquez ,Alvarez ,1588.56,0
+882119,Ruben ,ELVIRA,Larrañaga ,Spinelli ,9634.39,0
+848848,Rodrigo,ELÍAS,Morató ,Marana ,425.17,0
+778235,Yael ,ELOISA,Meerhoff,Rodriguez,8834.69,1
+340667,Ari ,ÁGUEDA,Arcos,Rodirgon ,7591.15,0
+226815,Gustavo,ELÍAS,Barrios ,Fernández,2284.44,0
+55020,Laura,ESMERALDA,Barros ,Fernández,5930.59,1
+700494,Rosario ,ESMERALDA,Ocampo ,Fernández,2991.83,0
+438086,Veronica ,Gisela ,Ruibal ,Morató ,1095.04,0
+938187,Victoria ,ESTEBAN,Alvarez ,Gonzalez,6601.34,0
+66801,Monica ,ELISABETH,Alvarez ,Sanchez ,4780.97,1
+142512,Anabella ,AARON,Alvarez ,Olivera ,5878.7,0
+655800,Isabella ,ALDO,Alvarez ,Gonzaléz ,9438.63,1
+738547,Natalie,ELISABETH,Perez,Alvarez ,6466.44,1
+160447,Natalia ,ALCIRA,Rodriguez,Severo ,758.69,0
+681875,Rigoberta,EDITH,Gumer,Gonzaléz ,1866.38,1
+80867,Rigoberto ,ELÍAS,Rodriguez,Folle ,8455.57,0
+524160,Juan ,Pedro ,Machado ,Gumer,2554.03,1
+790913,Pablo ,EMA,Severo ,Cristian,1035,0
+465358,Roberto ,EULALIO,Larrañaga ,Moller ,1914.85,1
+453811,Juan ,Alberto ,Pirez,Nocetti ,4678.73,0
+790564,Sofia,EUFRASIA,Piriz ,Modric,7374.31,1
+218593,Pedro,ADALBERTO,Josel,Tirado ,5142.03,1
+144686,Andres ,EUDOXIO,Rius,Barros ,3101.14,1
+771022,Julieta ,EMILIA,Vazquez ,De Vargas ,752.43,0
+946058,Gonzalo ,ADELMO,Tirado ,Pirez,6049.84,1
+720893,Gaston ,EUSEBIO,Sanchez ,Decournex,7364.73,1
+996746,Micaela ,Yael ,Varietti ,Larrañaga ,8355.76,0
+439983,Roberto ,ALBERTO,Ana ,Nocetti ,6195.09,1
+524390,Ruben ,ALAN,Chiesa ,Piriz ,5189.03,1
+93503,Pedro,ADRIÁN,Milan ,Sanchez ,1184.02,0
+106077,Gaston ,Rodrigo ,Hernández ,Folle ,2124.2,0
+20918,Rodrigo,Gaston ,Avogadro ,Morató ,710.43,1
+577873,Gustavo,EULALIO,Alvarez ,Dales,170.9,1
+280,Monica ,Micaela ,Perez ,Avogadro ,67277.5,1
+330105,Natalie,Ingrid ,Olivera ,Avogadro ,839.18,0
+691060,Rigoberta,ESTELA,Alvarellos ,Avogadro ,2792.36,1
+160005,Sofia,ENCARNACIÓN,Andoni ,Alvarellos ,9907.1,0
+108158,Andres ,ENCARNACIÓN,Gumer,Fernández,2590.22,0
+645457,Gonzalo ,ERICO,Perez ,Spinelli ,2784.71,1
+74704,Pedro,ERASMO,Olivera ,Olivares ,5341.3,1
+934425,Micaela ,ERICA,Spinelli ,Alonso ,2750.14,1
+172635,Yael ,ELOISA,Casatroja ,Rodirgon ,3431.64,1
+66583,Rosario ,ADELAIDA,Armendariz ,Alvarez ,290.12,1
+222993,Rosario ,Maira ,Machado ,Rodriguez,4619.12,0
+780555,Natalie,ALAN,Obaldía ,Marana ,4373.51,1
+744394,Rigoberta,EUCLIDES,De Vargas ,Severo ,4534.41,0
+842130,Andres ,ELEONOR,Fernández,Riubal ,3013.28,0
+290126,Gonzalo ,ENCARNACIÓN,Hounie ,Tirado ,3909.94,1
+62938,Micaela ,EUFRASIO,Alvarellos ,Roibal ,6590.99,0
+421253,Ruben ,EZEQUIEL,Hounie ,Alvarellos ,6016.66,0
+940125,Gaston ,EDITH,Fernández,Ricoa,6246.56,1
+637025,Monica ,EMA,Avogadro ,Fernández,1329.52,0
+23447,Gonzalo ,ADÁN,Avogadro ,Larrañaga ,7873.81,1
+478815,Yael ,ELISABETH,Fernández,Moller ,2646.13,0
+764476,Victoria ,ENCARNACIÓN,Machado ,Rius,2264.56,0
+819788,Anabella ,ALBERTO,Natal ,Bernal ,6991.99,1
+784912,Rigoberto ,EVANGELINA,Gomez,Rodriguez,2256.73,1
+399968,Pablo ,EMILIO,Gonzaléz ,Machado ,5980.52,0
+596599,Gonzalo ,ADA,Fernández,Hernández ,6097.16,1
+998409,Gaston ,ADALBERTO,Dibar,Primer Apellido ,5663.87,0
+4303,Natalie,ETEL,Paser,Hounie ,5218.25,0
+992408,Sofia,ESTER,Moller ,Perez,7127.99,0
+311686,Rigoberta,AÍDA,Kopke ,Olivera ,72.73,1
+226926,Andres ,ELÍAS,Riubal ,Sanchez ,4124.95,0
+940727,Ruben ,ÁGATA,Roibal ,Dibar,8733.78,0
+560617,Yael ,EUFRASIO,Silva ,Ana ,1309.04,1
+632277,Natalie,ELVIRA,Tirado ,Morató ,5170.54,1
+159448,ADÁN,EFRAÍN,Ruibales ,Andoni ,7907.29,0
+513957,ESTER,EULALIO,Rubiales ,Gonzaléz ,8593.15,0
+851703,EZEQUIEL,ALBANO,Alonso ,Hounie ,6044.37,0
+246580,ÁGUEDA,ELISABETH,Decournex,Ruibales ,8544.43,1
+325315,ABEL,ÁGUEDA,Baldi ,Ocampo ,33.44,1
+562630,EULALIA,EUSTAQUIO,Rodirgon ,Perez,3166.61,0
+276906,ELEONOR,EUGENIO,Fernández,Rocetti ,4747,1
+89544,AARON,EUDOSIA,Gonzaléz ,Alonso ,4303.2,0
+445738,ESTEBAN,ELISABETH,Piroco ,Baldi ,4096.81,0
+233614,EMILIA,ENCARNACIÓN,Fernández,Tonic,7200.99,1
+763440,EMA,EDMUNDO,Piroto ,Tonic,8393.75,0
+367483,ADA,ELSA,Ruibales ,Fernández,250.69,0
+54500,ESTEBAN,EDGARDO,Gonzaléz ,Avogadro ,1376.74,1
+270484,EFRÉN,ELISA,Rubial ,Fernández,1740.52,1
+957060,EMILIO,EUDOSIA,Morató ,Ribon ,3121.19,1
+33269,ALBANO,EUFEMIO,Gonzaléz ,Gonzaléz ,6324.54,1
+830741,ABRIL,ALEJANDRO,Culic ,Tirado ,5244.93,1
+557148,ELVIRA,EUCLIDES,Licandro ,Gonzaléz ,5852.36,0
+456565,ELEONOR,EFRÉN,Torres,Perez,2793.39,1
+134818,ALEJANDRO,EVANGELINA,Chips ,Andoni ,8122.44,1
+986417,ALDO,EMILIO,Dales,Rubiales ,8894.07,0
+287268,EUFRASIA,EZEQUIEL,Ricoa,Fernández,9472.03,0
+674160,ALEJANDRO,ÁGATA,Protecta,Larrañaga ,912.86,0
+184985,ADELINA,EUFEMIO,Fernández,Alvarez ,2515.77,1
+652975,ABRIL,ÁGUEDA,Retruc,Rodriguez,7827.66,1
+159644,ADALBERTO,ADRIÁN,Olivares ,Marana ,9906.59,1
+964185,ADRIÁN,EUGENIA,Ricoh,Machado ,1010.15,1
+954277,ADRIANO,EVARISTO,Vilman ,Barrios ,3480.54,1
+119294,AGUSTÍN,ADRIÁN,Tonic,Kopke ,4509.45,0
+92799,ELISA,EFRÉN,Modric,Avogadro ,9129.39,0
+563656,ELOY,EVANGELINA,Gamero ,Licandro ,5699.21,1
+617191,ELÍAS,ALDO,Torres,De Vargas ,602.13,1
+464940,EUFRASIO,EDMUNDO,Marana ,Casatroja ,9693.96,0
+579170,EUFRASIO,Bernardo ,Rocetti ,Rodriguez,161.33,1
+843646,ELOISA,Maria ,Nocetti ,Machado ,7261.53,1
+986379,ADELINA,Maria ,Gonzaléz ,Ruibal ,6102.31,0
+775099,ALEJANDRA,Maria ,Folle ,Protecta,4126.64,0
+415026,ABRIL,ADA,Bernal ,Natal ,9270.94,1
+926114,ABEL,ESTEBAN,Marana ,Perez,2759.66,1
+704500,EVARISTO,ERNESTO,Ronal,Andoni ,1699.99,0
+65698,ALDO,ABELARDO,Cristian,Melines,3374.04,0
+173584,EMILIO,Alvaro ,Ribon ,Tirado ,4475.89,1
+663124,ERICO,Gonzalo ,Chiesa ,Ruibal ,393.83,1
