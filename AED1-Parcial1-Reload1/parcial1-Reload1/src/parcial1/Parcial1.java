@@ -166,7 +166,6 @@ public class Parcial1 {
                         "   Esp: " + especialidad);
                 nodoAfiliadoEspecialidad = nodoAfiliadoEspecialidad.getSiguiente();
             }
-            System.out.println();
             System.out.println("Orden ascendente por cédula.");
         }
         else {
