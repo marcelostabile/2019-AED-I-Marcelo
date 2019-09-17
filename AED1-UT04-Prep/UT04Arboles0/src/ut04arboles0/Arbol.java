@@ -1,14 +1,25 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * CLASE ÁRBOL.
  */
 package ut04arboles0;
 
 /**
- *
- * @author mstabile
+ * @author EQUIPO.
  */
-public class Arbol {
+public class Arbol<T> {
+    
+    // Atributos.
+    private INodo<T> raiz;
+    
+    // Constructor 2: crear el árbol estableciendo de raiz un nodo.
+    public Arbol(INodo<T> raiz) { 
+        this.raiz = raiz;   
+    }
+    
+    // Constructor 1: crear el árbol 
+    
+    
+    
+    
     
 }

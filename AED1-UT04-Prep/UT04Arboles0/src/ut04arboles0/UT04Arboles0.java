@@ -41,16 +41,16 @@ public class UT04Arboles0 {
         Persona persona9 = new Persona("Charles", "Addams", "96543217");
         persona9.setEdad(76);
         
-        // Crear nodos de los personajes.
-        INodo<Persona> nodoPer1 = new Nodo<>(persona1.getId(), persona1);
-        INodo<Persona> nodoPer2 = new Nodo<>(persona2.getId(), persona2);
-        INodo<Persona> nodoPer3 = new Nodo<>(persona3.getId(), persona3);
-        INodo<Persona> nodoPer4 = new Nodo<>(persona4.getId(), persona4);
-        INodo<Persona> nodoPer5 = new Nodo<>(persona5.getId(), persona5);
-        INodo<Persona> nodoPer6 = new Nodo<>(persona6.getId(), persona6);
-        INodo<Persona> nodoPer7 = new Nodo<>(persona7.getId(), persona7);
-        INodo<Persona> nodoPer8 = new Nodo<>(persona8.getId(), persona8);
-        INodo<Persona> nodoPer9 = new Nodo<>(persona9.getId(), persona9);
+//        // Crear nodos de los personajes.
+//        INodo<Persona> nodoPer1 = new Nodo<>(persona1.getId(), persona1);
+//        INodo<Persona> nodoPer2 = new Nodo<>(persona2.getId(), persona2);
+//        INodo<Persona> nodoPer3 = new Nodo<>(persona3.getId(), persona3);
+//        INodo<Persona> nodoPer4 = new Nodo<>(persona4.getId(), persona4);
+//        INodo<Persona> nodoPer5 = new Nodo<>(persona5.getId(), persona5);
+//        INodo<Persona> nodoPer6 = new Nodo<>(persona6.getId(), persona6);
+//        INodo<Persona> nodoPer7 = new Nodo<>(persona7.getId(), persona7);
+//        INodo<Persona> nodoPer8 = new Nodo<>(persona8.getId(), persona8);
+//        INodo<Persona> nodoPer9 = new Nodo<>(persona9.getId(), persona9);
 
         
     }
