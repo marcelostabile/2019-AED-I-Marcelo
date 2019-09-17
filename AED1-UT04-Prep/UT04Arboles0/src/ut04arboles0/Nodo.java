@@ -1,7 +1,7 @@
 /*
  * CLASE NODO.
  */
-package ut04casobase01;
+package ut04arboles0;
 
 /**
  * @author EQUIPO.
@@ -11,7 +11,11 @@ public class Nodo<T> implements INodo<T> {
     // Atributos.
     private Comparable etiqueta;
     private T dato;
-    private INodo<T> siguiente = null;
+    
+    // Atributos para referencias.
+    private INodo<T> padre = null;
+    private INodo<T> hojaIzquierda = null;
+    private INodo<T> hojaDerecha = null;
 
     // Constructor.
     public Nodo(Comparable etiqueta, T dato) {
@@ -19,19 +23,15 @@ public class Nodo<T> implements INodo<T> {
         this.dato = dato;
     }
 
-    public Nodo() {
-        this.etiqueta = null;
-    }
-
     // Etiqueta.
     @Override
-    public Comparable getEtiqueta() {
-        return this.etiqueta;
+    public Comparable getEtiqueta() { 
+        return this.etiqueta; 
     }
 
     @Override
-    public void setEtiqueta(Comparable unaEtiqueta) {
-        this.etiqueta = unaEtiqueta;
+    public void setEtiqueta(Comparable etiqueta) {
+        this.etiqueta = etiqueta;
     }
 
     // Dato.
@@ -44,24 +44,42 @@ public class Nodo<T> implements INodo<T> {
     public void setDato(T dato) {
         this.dato = dato;
     }
-    
-    // Siguiente.
+
+    // Padre.
     @Override
-    public INodo<T> getSiguiente() {
-        return this.siguiente;
-    }
-    
-    public void setSiguiente(Nodo<T> nodo) {
-        this.siguiente = nodo;
+    public INodo<T> getPadre() { 
+        return this.padre; 
     }
 
     @Override
-    public void setSiguiente(INodo<T> nodo) {
-        this.siguiente = nodo;
+    public void setPadre(Nodo padre) { 
+        this.padre = padre; 
+    }
+    
+    // Hoja Izquierda.
+    @Override
+    public INodo<T> getHojaIzquierda() { 
+        return this.hojaIzquierda; 
+    }
+    
+    @Override
+    public void setHojaIzquierda(Nodo hojaIzquierda) { 
+        this.hojaIzquierda = hojaIzquierda; 
+    }    
+    
+    // Hoja Derecha.
+    @Override
+    public INodo<T> getHojaDerecha() { 
+        return this.hojaDerecha; 
+    }
+    
+    @Override
+    public void setHojaDerecha(Nodo hojaDerecha) { 
+        this.hojaDerecha = hojaDerecha; 
     }
 
     @Override
-    public Nodo<T> clonar() {
+    public Nodo<T> clonarSinReferencias() {
         return new Nodo<>(this.etiqueta, this.dato);
     }
     
@@ -88,7 +106,7 @@ public class Nodo<T> implements INodo<T> {
     @Override
     public int compareTo(INodo<T> unNodo) {
         return this.etiqueta.compareTo(unNodo.getEtiqueta());
+        
     }
-
     
 }

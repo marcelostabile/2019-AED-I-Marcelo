@@ -1,12 +1,12 @@
 /*
  * INTERFASE INODO
  */
-package ut04casobase01;
+package ut04arboles0;
 
 /**
  * @author EQUIPO
  */
-public interface INodo<T> {
+public interface INodo1<T> {
 
     /**
      * Retorna la etiqueta del nodo
@@ -41,14 +41,14 @@ public interface INodo<T> {
      *
      * @return Siguiente nodo del actual
      */
-    public INodo<T> getSiguiente();
+    public INodo1<T> getSiguiente();
 
     /**
      * Asigna el siguiente nodo al nodo actual.
      *
      * @param nodo Nodo a asignar como siguiente.
      */
-    public void setSiguiente(INodo<T> nodo);
+    public void setSiguiente(INodo1<T> nodo);
 
     /**
      * Clonar el nodo.
@@ -73,7 +73,7 @@ public interface INodo<T> {
      * @param unNodo
      * @return devuelve "verdadero" si son iguales, "falso" si no lo son.
      */
-    public boolean equals(INodo<T> unNodo);
+    public boolean equals(INodo1<T> unNodo);
 
         /**
      * Comparación de etiquetas.
@@ -89,7 +89,7 @@ public interface INodo<T> {
      * @param unNodo
      * @return devueve "-1" si tiene etiqueta menor, "0" si son iguales, "1" si es mayor.
      */
-    public int compareTo(INodo<T> unNodo);
+    public int compareTo(INodo1<T> unNodo);
 
     
 }
