@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * INTERFASE
  */
 package ut04listas0;
 
@@ -11,12 +9,16 @@ package ut04listas0;
  */
 public interface IPersona {
 
-    String getApellido();
-
     String getNombre();
+
+    void setNombre(String nombre);
+
+    String getApellido();
 
     void setApellido(String apellido);
 
-    void setNombre(String nombre);
+    int getEdad();
+
+    void setEdad(int edad);
     
 }

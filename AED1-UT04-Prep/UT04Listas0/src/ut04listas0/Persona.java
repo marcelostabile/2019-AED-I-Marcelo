@@ -13,10 +13,10 @@ public class Persona implements IPersona {
     private String nombre;
     private String apellido;
     private int edad = 0;
-    private String sexo = null;
-    private String domicilio = null;
-    private String telefono = null;
-    private String celular = null;
+//    private String sexo = null;
+//    private String domicilio = null;
+//    private String telefono = null;
+//    private String celular = null;
     
     /*
      * Constructor.
@@ -36,19 +36,21 @@ public class Persona implements IPersona {
     @Override
     public void setApellido(String apellido) { this.apellido = apellido; }
     
+    @Override
     public int getEdad() { return this.edad; }
+    @Override
     public void setEdad(int edad) { this.edad = edad; }
     
-    public String getSexo() { return this.sexo; }
-    public void setSexo(String sexo) { this.sexo = sexo; }
-    
-    public String getDomicilio() { return this.domicilio; }
-    public void setDomicilio(String domicilio) { this.domicilio = domicilio; }
-    
-    public String getTelefono() { return this.telefono; }
-    public void setTelefono(String telefono) { this.telefono = telefono; }
-    
-    public String getCelular() { return this.celular; }
-    public void setCelular(String celular) { this.celular = celular; }
+//    public String getSexo() { return this.sexo; }
+//    public void setSexo(String sexo) { this.sexo = sexo; }
+//    
+//    public String getDomicilio() { return this.domicilio; }
+//    public void setDomicilio(String domicilio) { this.domicilio = domicilio; }
+//    
+//    public String getTelefono() { return this.telefono; }
+//    public void setTelefono(String telefono) { this.telefono = telefono; }
+//    
+//    public String getCelular() { return this.celular; }
+//    public void setCelular(String celular) { this.celular = celular; }
 
 }
