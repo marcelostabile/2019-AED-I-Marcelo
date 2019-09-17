@@ -9,6 +9,8 @@ package ut04listas0;
  */
 public interface IPersona {
 
+    String getId();
+    
     String getNombre();
 
     void setNombre(String nombre);

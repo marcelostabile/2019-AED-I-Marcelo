@@ -10,6 +10,7 @@ package ut04listas0;
 public class Persona implements IPersona {
     
     // Atributos.
+    private String id;
     private String nombre;
     private String apellido;
     private int edad = 0;
@@ -21,10 +22,14 @@ public class Persona implements IPersona {
     /*
      * Constructor.
     */
-    public Persona(String nombre, String apellido) {
+    public Persona(String nombre, String apellido, String id) {
+        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
     }
+
+    @Override
+    public String getId() { return this.id; }
     
     @Override
     public String getNombre() { return this.nombre; }
