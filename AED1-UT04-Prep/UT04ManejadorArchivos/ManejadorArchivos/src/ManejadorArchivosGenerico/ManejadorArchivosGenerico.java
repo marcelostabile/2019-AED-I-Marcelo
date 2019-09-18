@@ -32,10 +32,8 @@ public class ManejadorArchivosGenerico {
         try { 
             // Inicializar FileWriter con archivo y 'true' indica agregar lineas al final. 
             fw = new FileWriter(archivo, true);
-            
             // Inicializar BufferedWriter con el FileWriter creado.
             BufferedWriter bw = new BufferedWriter(fw);
-            
             // Para cada registro en la lista.
             for (int i = 0; i < listaLineas.length; i++) { 
                 // Tomo el registro actual.
@@ -47,7 +45,7 @@ public class ManejadorArchivosGenerico {
             // Cerrar el BW y el FW.
             bw.close();
             fw.close();
-
+            
         } catch (IOException e) {
             System.out.println("Error al escribir el archivo " + archivo);
             e.printStackTrace();
@@ -64,25 +62,21 @@ public class ManejadorArchivosGenerico {
 
         // Instancia FileReader.
         FileReader fr;
-        
         // Crear un arraylist.
         ArrayList<String> listaLineas = new ArrayList<String>();
         
         try {
             // Inicializar FileWriter con archivo.
             fr = new FileReader(archivo);
-            
             // Inicializar BufferedWriter con el FileWriter creado.
             BufferedReader br = new BufferedReader(fr);
-
-            // Lectura de la linea actual.
+            // Lectura de todas las lineas hasta el final.
             String lineaActual = br.readLine();
-            
-            
             while (lineaActual != null) {
                 listaLineas.add(lineaActual);
                 lineaActual = br.readLine();
             }
+            // Cerrar el BW y el FW.
             br.close();
             fr.close();
 
