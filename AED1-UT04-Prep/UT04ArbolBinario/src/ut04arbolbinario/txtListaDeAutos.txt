@@ -1,0 +1,10 @@
+Chevrolet,Camaro,SBD25698
+Chevrolet,Onix,SFE64856
+Chevrolet,Onix,SGE46854
+Chevrolet,Onix,SGA55486
+Fiat,Uno,SFE64589
+Fiat,Uno,ABB54645
+Ford,Fiesta,AHG44952
+Hyundai,i10,GHT45324
+Hyundai,Tucson,GHE21546
+BMW,320,SBB25347
