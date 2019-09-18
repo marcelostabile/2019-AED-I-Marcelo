@@ -46,7 +46,7 @@ public interface IArbolBB<T> {
      * Elimina un elemento dada una etiqueta.
      * @param unaEtiqueta 
      */
-    public void eliminar(Comparable unaEtiqueta);
+    //public void eliminar(Comparable unaEtiqueta);
 
 	
 	

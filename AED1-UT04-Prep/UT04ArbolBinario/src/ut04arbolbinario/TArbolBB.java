@@ -5,7 +5,7 @@ package ut04arbolbinario;
  */
 public class TArbolBB<T> implements IArbolBB<T> {
 
-    public static final String SEPARADOR_ELEMENTOS_IMPRESOS = "-";
+    // public static final String separadorGuion = "-";
 
     // Atributos.
     private IElementoAB<T> raiz;
@@ -43,17 +43,22 @@ public class TArbolBB<T> implements IArbolBB<T> {
         return (raiz == null);
     }
 
+    @Override
     // Recorrido preOrden.
+    public String preOrden() {
+        return raiz.preOrden();
+    }
     
+    @Override
     // Recorrido inOrden.
+    public String inOrden() {
+        return raiz.inOrden();
+    }
     
+    @Override
     // Recorrido postOrden.
-    
-    
-    
-    
-    
-    
-    
+    public String postOrden() {
+        return raiz.postOrden();
+    }
     
 }

@@ -6,15 +6,15 @@
 3. Obtener la lista de vehiculos que coinciden con la b�squeda.
 
 
-A. Recorrido PreOrden.
+A. OK   - Recorrido PreOrden.
 
-B. Recorrido InOrden.
+B. OK   - Recorrido InOrden.
 
-C. Recorrido PostOrden.
+C. OK   - Recorrido PostOrden.
 
-D. OK - Insertar un elemento.
+D. OK   - Insertar un elemento.
 
-E. OK - Buscar un elemento.
+E. OK   - Buscar un elemento.
 
 F. Eliminar un elemento.
 

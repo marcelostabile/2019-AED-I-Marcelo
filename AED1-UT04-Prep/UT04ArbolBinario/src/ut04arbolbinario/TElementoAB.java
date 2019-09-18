@@ -51,6 +51,12 @@ class TElementoAB<T> implements IElementoAB<T> {
     public void setHijoDer(TElementoAB<T> elemento) {
         this.hijoDer = elemento;
     }
+
+    // Datos.
+    @Override
+    public T getDatos() {
+        return this.datos;
+    }
     
     /**
      * BUSCAR UN ELEMENTO en los hijos y sus subárboles.
@@ -94,11 +100,13 @@ class TElementoAB<T> implements IElementoAB<T> {
      */
     @SuppressWarnings("unchecked")
     @Override
-    public boolean insertar(TElementoAB unElemento) {
+    public boolean insertar(TElementoAB<T> unElemento) {
         
-        // Selecciona el hijo izquierdo si el valor es menor.
+        /**
+          * Selecciona el hijo izquierdo si el valor es menor.
+          * Si hijoIzq está vacío, lo inserta allí, retorna true.
+          */ 
         if (unElemento.getEtiqueta().compareTo(etiqueta) < 0) {
-            // Si hijoIzq está vacío, lo inserta allí, retorna true.
             if (hijoIzq != null) {
                 return getHijoIzq().insertar(unElemento);
             } else {
@@ -106,7 +114,11 @@ class TElementoAB<T> implements IElementoAB<T> {
                 return true;
             }
         } 
-        // Selecciona el hijo derecho si el valor es mayor.
+        
+        /**
+         * Selecciona el hijo derecho si el valor es mayor.
+         * Si hijoIzq está vacío, lo inserta allí, retorna true.
+         */
         else if (unElemento.getEtiqueta().compareTo(etiqueta) > 0) {
             if (hijoDer != null) {
                 return getHijoDer().insertar(unElemento);
@@ -115,70 +127,120 @@ class TElementoAB<T> implements IElementoAB<T> {
                 return true;
             }
         } 
+        
         // Si ya existe el elemento con la misma etiqueta, devuelve false.
         else {
             return false;
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // Imprimir.
-    public String imprimir() {
-        return (etiqueta.toString());
-    }
-
+    /**
+     * RECORRIDO PREORDEN.
+     * Imprime en preorden el árbol separado por guiones.
+     * 
+     * @return un string con el resultado.
+     */
     @Override
     public String preOrden() {
-        StringBuilder tempStr = new StringBuilder();
-        tempStr.append(imprimir());
+        
+        // String auxiliar.
+        StringBuilder strAux = new StringBuilder();
+        
+        // Agregamos raiz.
+        strAux.append(etiqueta.toString());
+
+        // Si existe, agregamos hijoIzq.
         if (hijoIzq != null) {
-            tempStr.append(TArbolBB.SEPARADOR_ELEMENTOS_IMPRESOS);
-            tempStr.append(getHijoIzq().preOrden());
+            strAux.append("-");
+            strAux.append(getHijoIzq().preOrden());
         }
+        
+        // Si existe, agregamos hijoDer.
         if (hijoDer != null) {
-            tempStr.append(TArbolBB.SEPARADOR_ELEMENTOS_IMPRESOS);
-            tempStr.append(getHijoDer().preOrden());
+            strAux.append("-");
+            strAux.append(getHijoDer().preOrden());
         }
-        return tempStr.toString();
+        
+        // Retornamos el string.
+        return strAux.toString();
     }
 
+    /**
+     * RECORRIDO INORDEN.
+     * Imprime en inorden el árbol separado por guiones.
+     * 
+     * @return un string con el resultado.
+     */
     @Override
     public String inOrden() {
-        String resultado = "";
-        if(hijoIzq != null){
-            resultado += hijoIzq.inOrden();
+                
+        // String auxiliar.
+        StringBuilder strAux = new StringBuilder();
+        
+        // Si existe, agregamos hijoIzq.
+        if (hijoIzq != null) {
+            strAux.append("-");
+            strAux.append(getHijoIzq().inOrden());
         }
-        resultado += getEtiqueta().toString()+" ";
-        if(hijoDer != null){
-            resultado += hijoDer.inOrden();
-        }
-        return resultado;
-    }    
+        
+        // Agregamos raiz.
+        strAux.append(etiqueta.toString());
 
+        // Si existe, agregamos hijoDer.
+        if (hijoDer != null) {
+            strAux.append("-");
+            strAux.append(getHijoDer().inOrden());
+        }
+        
+        // Retornamos el string.
+        return strAux.toString();
+    }
+    
+    /**
+     * RECORRIDO POSTORDEN.
+     * Imprime en postorden el árbol separado por guiones.
+     * 
+     * @return un string con el resultado.
+     */
     @Override
     public String postOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                
+        // String auxiliar.
+        StringBuilder strAux = new StringBuilder();
+        
+        // Si existe, agregamos hijoIzq.
+        if (hijoIzq != null) {
+            strAux.append("-");
+            strAux.append(getHijoIzq().postOrden());
+        }
+        
+        // Si existe, agregamos hijoDer.
+        if (hijoDer != null) {
+            strAux.append("-");
+            strAux.append(getHijoDer().postOrden());
+        }
+
+        // Agregamos raiz.
+        strAux.append(etiqueta.toString());
+        
+        // Retornamos el string.
+        return strAux.toString();
     }
 
-    @Override
-    public T getDatos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+      
+//    /**
+//     * Imprimir.
+//     * 
+//     * @return etiqueta del nodo convertida en string.
+//     */
+//    public String imprimir() {
+//        return (etiqueta.toString());
+//    }
+    
+
+
+
+
 
     @Override
     public TElementoAB eliminar(Comparable unaEtiqueta) {
