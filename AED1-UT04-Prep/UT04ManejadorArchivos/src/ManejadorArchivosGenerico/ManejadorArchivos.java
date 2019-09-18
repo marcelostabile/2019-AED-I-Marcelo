@@ -13,7 +13,13 @@ public class ManejadorArchivos {
      */
     public static void main(String[] args) { 
         
-        // TODO code application logic here
+        // Carpeta y extensión de archivos de texto.
+        String workFolder = "src/";
+        String ext = ".txt";
+        
+        
+        
+        
         
         
         
