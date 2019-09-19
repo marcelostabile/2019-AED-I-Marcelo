@@ -179,16 +179,15 @@ class TElementoAB<T> implements IElementoAB<T> {
         
         // Si existe, agregamos hijoIzq.
         if (hijoIzq != null) {
-            strAux.append("-");
             strAux.append(getHijoIzq().inOrden());
         }
         
         // Agregamos raiz.
         strAux.append(etiqueta.toString());
+        strAux.append("-");
 
         // Si existe, agregamos hijoDer.
         if (hijoDer != null) {
-            strAux.append("-");
             strAux.append(getHijoDer().inOrden());
         }
         
@@ -210,18 +209,17 @@ class TElementoAB<T> implements IElementoAB<T> {
         
         // Si existe, agregamos hijoIzq.
         if (hijoIzq != null) {
-            strAux.append("-");
             strAux.append(getHijoIzq().postOrden());
         }
         
         // Si existe, agregamos hijoDer.
         if (hijoDer != null) {
-            strAux.append("-");
             strAux.append(getHijoDer().postOrden());
         }
 
         // Agregamos raiz.
         strAux.append(etiqueta.toString());
+        strAux.append("-");
         
         // Retornamos el string.
         return strAux.toString();

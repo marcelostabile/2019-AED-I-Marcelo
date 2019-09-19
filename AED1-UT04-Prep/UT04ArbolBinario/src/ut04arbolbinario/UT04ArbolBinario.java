@@ -3,6 +3,9 @@
  */
 package ut04arbolbinario;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  *
  * @author EQUIPO
@@ -14,23 +17,107 @@ public class UT04ArbolBinario {
      */
     public static void main(String[] args) { 
         
+        /**
+         * PARTE 1
+         * 
+         * Armar un árbol e ingresar registros de autos.
+         * 
+         * Imprimir por consola los resultados en preorden, inorden y postorden.
+         */
+        
         // Archivos de trabajo.
-        String workFolder = "src/";
+        String workFolder = "src/ut04arbolbinario/";
         String ext =".txt";
         
-        String archOrigen = "txtListaDeAutos" + ext;
-        String archBusqueda = "txtAutosBuscados" + ext;
-        String archResultado = "txtlistaResultado" + ext;
+        String archOrigen = workFolder + "txtListaDeAutos" + ext;
+        String archBuscados = workFolder + "txtAutosBuscados" + ext;
+        String archResultados = workFolder + "txtlistaResultado" + ext;
         
+        // Cargar lista de autos en árbol.
+        IArbolBB arbolAutos = new TArbolBB();
+
+        // Lista auxiliar de resultados cargados.
+        ArrayList<String> resultadoInsertados = new ArrayList<>();
+
+        // MANEJADOR DE ARCHIVOS para cargar árbol de autos.
+        IManejadorArchivos manejadorArchivos = new ManejadorArchivosGenerico();
         
+        // Cargo las lineas del archivo y luego ingreso los registros al árbol.
+        String[] lineasArchivo1 = manejadorArchivos.leerArchivo(archOrigen);
+
+        for (String linea : lineasArchivo1) {
+            
+            // Obtengo los registros de cada linea e instancio un nuevo auto a partir de cada registro.
+            String[] reg = linea.split(",");
+            
+            TAuto autoNuevo = new TAuto(reg[0], reg[1], reg[2]);
+
+            // Instancio un nuevo elemento a partir del auto.
+            TElementoAB unElemento = new TElementoAB(autoNuevo.getMatricula(), autoNuevo);
+            
+            // Insertar el auto en el árbol.
+            arbolAutos.insertar(unElemento);
+            
+            // Agrego la etiqueta en el registro de autos insertados.
+            resultadoInsertados.add(unElemento.getEtiqueta().toString());
+        }
+
+        // Imprimir registros insertados.
+        System.out.println("* * * PARTE A - IMPRIMIR REGISTROS INSERTADOS * * *");
+        System.out.println("");
+        System.out.println("Pre-Orden: " + arbolAutos.preOrden());
+        System.out.println("In-Orden: " + arbolAutos.inOrden());
+        System.out.println("Post-Orden: " + arbolAutos.postOrden());
+        System.out.println("");
         
+        /**
+         * PARTE 2
+         * 
+         * Cargar una segunda lista de matriculas que se buscan.
+         * 
+         * Buscarlas en el árbol de autos y guardar en un archivo de texto el resultado.
+         */
         
+        // Cargar lista de autos en árbol.
+        IArbolBB arbolBuscados = new TArbolBB();
+
+        // Lista auxiliar de resultados cargados.
+        ArrayList<String> resultadoEncontrados = new ArrayList<>();
         
+        // MANEJADOR DE ARCHIVOS para cargar árbol de autos buscados a partir de su matrícula.
         
+        // Cargo las lineas del archivo y luego ingreso los registros al árbol.
+        String[] lineasArchivo2 = manejadorArchivos.leerArchivo(archBuscados);
+
+        for (int i = 0; i < lineasArchivo2.length; i++) {
+
+            // Busco el elemento en el árbol de autos.
+            TElementoAB resultadoBusqueda = arbolAutos.buscar(lineasArchivo2[i]);
+
+            // Guardo el resultado en una lista de salida (si el resultado no es nulo).
+            if (resultadoBusqueda != null) {
+                
+                // Agrego el elemento al árbol.
+                arbolBuscados.insertar(resultadoBusqueda);
+                
+                // Agrego el elemento en una lista.
+                resultadoEncontrados.add(resultadoBusqueda.getEtiqueta().toString());
+            }
+            
+        }
         
+        // Imprimir registros de elementos encontrados.
+        System.out.println("* * * PARTE B - IMPRIMIR REGISTROS ENCONTRADOS * * *");
+        System.out.println("");
+        System.out.println("Pre-Orden: " + arbolBuscados.preOrden());
+        System.out.println("In-Orden: " + arbolBuscados.inOrden());
+        System.out.println("Post-Orden: " + arbolBuscados.postOrden());
+        System.out.println("");
         
-        
-        
+        System.out.println("Imprimir Array Insertados: " + Arrays.toString(resultadoInsertados.toArray()));
+        System.out.println("");
+        System.out.println("Imprimir Array Encontrados: " + Arrays.toString(resultadoEncontrados.toArray()));
+        System.out.println("");
         
     }
     
