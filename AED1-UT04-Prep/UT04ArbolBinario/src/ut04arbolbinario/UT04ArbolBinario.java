@@ -97,25 +97,26 @@ public class UT04ArbolBinario {
             // Guardo el resultado en una lista de salida (si el resultado no es nulo).
             if (resultadoBusqueda != null) {
                 
-                // Agrego el elemento al árbol.
-                arbolBuscados.insertar(resultadoBusqueda);
+                // Agrego el elemento resultado a un árbol.
+                arbolBuscados.insertar(new TElementoAB(resultadoBusqueda.etiqueta, resultadoBusqueda.getDatos()));
                 
-                // Agrego el elemento en una lista.
+                // Agrego el elemento resultado a una lista.
                 resultadoEncontrados.add(resultadoBusqueda.getEtiqueta().toString());
             }
-            
         }
-        
+
         // Imprimir registros de elementos encontrados.
         System.out.println("* * * PARTE B - IMPRIMIR REGISTROS ENCONTRADOS * * *");
-        System.out.println("");
-        System.out.println("Pre-Orden: " + arbolBuscados.preOrden());
-        System.out.println("In-Orden: " + arbolBuscados.inOrden());
-        System.out.println("Post-Orden: " + arbolBuscados.postOrden());
         System.out.println("");
         
         System.out.println("Imprimir Array Insertados: " + Arrays.toString(resultadoInsertados.toArray()));
         System.out.println("");
+
+        System.out.println("Pre-Orden: " + arbolBuscados.preOrden());
+        System.out.println("In-Orden: " + arbolBuscados.inOrden());
+        System.out.println("Post-Orden: " + arbolBuscados.postOrden());
+        System.out.println("");
+
         System.out.println("Imprimir Array Encontrados: " + Arrays.toString(resultadoEncontrados.toArray()));
         System.out.println("");
         
