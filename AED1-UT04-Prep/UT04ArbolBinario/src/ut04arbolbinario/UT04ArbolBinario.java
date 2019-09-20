@@ -27,11 +27,10 @@ public class UT04ArbolBinario {
         
         // Archivos de trabajo.
         String workFolder = "src/ut04arbolbinario/";
-        String ext =".txt";
         
-        String archOrigen = workFolder + "txtListaDeAutos" + ext;
-        String archBuscados = workFolder + "txtAutosBuscados" + ext;
-        String archResultados = workFolder + "txtlistaResultado" + ext;
+        String archOrigen = workFolder + "txtListaDeAutos.txt";
+        String archBuscados = workFolder + "txtAutosBuscados.txt";
+        String archResultados = workFolder + "txtListaResultados.txt";
         
         // Cargar lista de autos en árbol.
         IArbolBB arbolAutos = new TArbolBB();
@@ -119,6 +118,18 @@ public class UT04ArbolBinario {
 
         System.out.println("Imprimir Array Encontrados: " + Arrays.toString(resultadoEncontrados.toArray()));
         System.out.println("");
+        
+        /**
+         * Guardar los resultados en un archivo de textos.
+         * 
+         * Si no existe, lo crea automáticamente; si existe, agrega registros al final.
+         */
+        
+        // Convertir el arraylist en string[]
+        String[] regEncontrados = resultadoEncontrados.toArray(args);
+        
+        // Escribir en el archivo.
+        manejadorArchivos.escribirArchivo(archResultados, regEncontrados);
         
     }
     

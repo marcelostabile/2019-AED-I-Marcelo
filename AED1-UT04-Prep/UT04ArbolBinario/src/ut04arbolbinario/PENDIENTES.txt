@@ -1,10 +1,9 @@
 
-1. Cargar el archivo de datos en un �rbol.
+1. OK   - Cargar el archivo de datos en un �rbol.
 
-2. Cargar la lista de matriculas que se buscan.
+2. OK   - Cargar la lista de matriculas que se buscan.
 
-3. Obtener la lista de vehiculos que coinciden con la b�squeda.
-
+3. OK   - Obtener la lista de vehiculos que coinciden con la b�squeda.
 
 A. OK   - Recorrido PreOrden.
 

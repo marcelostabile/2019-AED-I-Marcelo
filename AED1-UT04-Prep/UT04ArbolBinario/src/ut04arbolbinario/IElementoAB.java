@@ -83,11 +83,12 @@ public interface IElementoAB<T> {
      */
     public T getDatos();
 	
-	 /**
+    /**
      * Elimina un elemento dada una etiqueta.
+     * 
      * @param unaEtiqueta
-     * @return 
+     * @return el elemento eliminado o null.
      */
     public TElementoAB eliminar(Comparable unaEtiqueta);
-
+    
 }

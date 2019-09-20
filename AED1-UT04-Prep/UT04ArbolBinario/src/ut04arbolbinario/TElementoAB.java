@@ -235,14 +235,49 @@ class TElementoAB<T> implements IElementoAB<T> {
 //        return (etiqueta.toString());
 //    }
     
-
-
-
-
-
+    /**
+     * Elimina un elemento dada una etiqueta.
+     * 
+     * @param unaEtiqueta
+     * @return el elemento eliminado o null.
+     */
     @Override
     public TElementoAB eliminar(Comparable unaEtiqueta) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        // Inicializo el resultado en null, sería lo retornado si no existe el nodo a eliminar.
+        TElementoAB resultadoEliminacion = null;
+        
+        // Comprobar cuantos hijos tiene el elemento.
+        boolean existeHijoIzq = this.getHijoIzq() != null;
+        boolean existeHijoDer = this.getHijoDer() != null;
+        
+        // Caso 1: no tiene hijos.
+        if (!existeHijoIzq && !existeHijoDer) {
+            
+        }
+        
+        // Caso 2: tiene solo un hijo.
+        if ((existeHijoIzq && !existeHijoDer) || (!existeHijoIzq && existeHijoDer)) {
+            
+        }
+        
+        // Caso 3: tiene dos hijos.
+        if (existeHijoIzq && existeHijoDer) {
+            
+        }        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        return resultadoEliminacion;
     }
 
 }
