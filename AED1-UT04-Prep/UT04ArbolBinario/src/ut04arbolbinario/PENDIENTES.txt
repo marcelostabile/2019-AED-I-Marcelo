@@ -15,13 +15,13 @@ D. OK   - Insertar un elemento.
 
 E. OK   - Buscar un elemento.
 
-F. Eliminar un elemento.
+F. OK   - Eliminar un elemento.
 
-   Caso 1. Elemento sin hijos (es una hoja).
+        OK - Caso 1. Elemento sin hijos (es una hoja).
 
-   Caso 2. Elemento tiene un hijo.
+        OK - Caso 2. Elemento tiene un hijo.
 
-   Caso 3. Elemento tiene dos hijos, que pueden ser padres de otros hijos.
+        OK - Caso 3. Elemento tiene dos hijos, que pueden ser padres de otros hijos.
 
 G. Modificar un elemento.
 

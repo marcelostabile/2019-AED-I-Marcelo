@@ -130,7 +130,27 @@ public class UT04ArbolBinario {
         
         // Escribir en el archivo.
         manejadorArchivos.escribirArchivo(archResultados, regEncontrados);
+
+        /**
+         * PARTE 3
+         * 
+         * Eliminar 3 nodos.
+         */
+        System.out.println("* * * PARTE C - IMPRIMIR REGISTROS INSERTADOS * * *");
+        System.out.println("");
         
+        System.out.println("Árbol original impreso en In-Orden: " + arbolAutos.inOrden());
+        System.out.println("");
+
+        // Eliminar registros.
+        arbolAutos.eliminar("BCD44952");
+        arbolAutos.eliminar("DEF21546");
+        arbolAutos.eliminar("FGH64589");
+        arbolAutos.eliminar("HIJ46854");
+        arbolAutos.eliminar("JKL25698");
+
+        // Imprimir resultado luego de la eliminación.
+        System.out.println("Árbol RESULTADO (In-Orden): " + arbolAutos.inOrden());
+        System.out.println("");
     }
-    
 }
