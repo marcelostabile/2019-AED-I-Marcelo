@@ -136,7 +136,7 @@ public class UT04ArbolBinario {
          * 
          * Eliminar 3 nodos.
          */
-        System.out.println("* * * PARTE C - IMPRIMIR REGISTROS INSERTADOS * * *");
+        System.out.println("* * * PARTE C - IMPRIMIR REGISTROS LUEGO DE LA ELIMINACIÓN * * *");
         System.out.println("");
         
         System.out.println("Árbol original impreso en In-Orden: " + arbolAutos.inOrden());
