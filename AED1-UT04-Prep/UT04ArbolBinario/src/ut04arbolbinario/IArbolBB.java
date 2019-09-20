@@ -11,7 +11,6 @@ public interface IArbolBB<T> {
      */
     public boolean insertar(TElementoAB<T> unElemento);
 
- 
     /**
      * Busca un elemento dentro del árbol.
      *
@@ -40,15 +39,12 @@ public interface IArbolBB<T> {
      * @return String conteniendo el preorden separado por guiones.
      */
     public String postOrden();
-
    
-       /**
+    /**
      * Elimina un elemento dada una etiqueta.
      * @param unaEtiqueta 
      */
-    //public void eliminar(Comparable unaEtiqueta);
-
-	
+    public void eliminar(Comparable unaEtiqueta);
 	
 }
 

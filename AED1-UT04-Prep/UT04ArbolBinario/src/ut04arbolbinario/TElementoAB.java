@@ -246,38 +246,72 @@ class TElementoAB<T> implements IElementoAB<T> {
 
         // Inicializo el resultado en null, sería lo retornado si no existe el nodo a eliminar.
         TElementoAB resultadoEliminacion = null;
-        
+
         // Comprobar cuantos hijos tiene el elemento.
         boolean existeHijoIzq = this.getHijoIzq() != null;
         boolean existeHijoDer = this.getHijoDer() != null;
-        
-        // Caso 1: no tiene hijos.
-        if (!existeHijoIzq && !existeHijoDer) {
-            
-        }
-        
-        // Caso 2: tiene solo un hijo.
-        if ((existeHijoIzq && !existeHijoDer) || (!existeHijoIzq && existeHijoDer)) {
-            
-        }
-        
-        // Caso 3: tiene dos hijos.
-        if (existeHijoIzq && existeHijoDer) {
-            
-        }        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        return resultadoEliminacion;
-    }
 
+        // Verifico el subárbol izquierdo.
+        if (unaEtiqueta.compareTo(this.etiqueta) < 0) { 
+            // Si tiene un hijo izquierdo, actualizo su valor.
+            if (existeHijoIzq) { 
+                hijoIzq = hijoIzq.eliminar(unaEtiqueta);
+            }
+            // Retorna al padre su mismo hijo.
+            return this;
+        }
+
+        // Verifoco el subárbol derecho.
+        if (unaEtiqueta.compareTo(this.etiqueta) > 0) {
+            // Si tiene un hijo derecho, actualizo su valor.
+            if (existeHijoDer) { 
+                hijoDer = hijoDer.eliminar(unaEtiqueta);
+            }
+            // Retorna al padre su mismo hijo.
+            return this;
+        }
+
+        // Quitar efectivamente el nodo y lo retorna a su padre.
+        return quitarNodo();
+    }
+    
+    /**
+     * Quitar el nodo.
+     * 
+     * @return el nodo eliminado.
+     */
+    private TElementoAB quitarNodo() { 
+        
+        // Si no tiene hijo izquierdo o es hoja, puede retornar nulo.
+        if (this.hijoIzq == null) {
+            return hijoDer;
+        }
+        
+        // Si no tiene hijo derecho.
+        if (this.hijoDer == null) {
+            return hijoIzq;
+        }
+        
+        // Es un nodo completo, tiene ambos hijos.
+        TElementoAB elPadre = this;
+        TElementoAB elHijo = hijoIzq;
+        
+        // El hijo es el más a la derecha del subárbol izquierdo.
+        while (elHijo.hijoDer != null) {
+            elPadre = elHijo;
+            elHijo = elHijo.hijoDer;
+        }
+        
+        if (elPadre != this) {
+            elPadre.hijoDer = elHijo.hijoIzq;
+            elHijo.hijoIzq = hijoIzq;
+        }
+        
+        // El hijo quedará en lugar de este.
+        elHijo.hijoDer = hijoDer;
+        
+        return elHijo;
+        
+    }
+    
 }

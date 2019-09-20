@@ -61,7 +61,18 @@ public class TArbolBB<T> implements IArbolBB<T> {
         return raiz.postOrden();
     }
     
-
-            
+    @Override
+    // Eliminar un nodo dada una etiqueta.
+    public void eliminar(Comparable unaEtiqueta) {
+        
+        // Verificamos si el árbol contiene elementos o está vacío.
+        if (raiz != null) { 
+            raiz = raiz.eliminar(unaEtiqueta);
+        }
+        else {
+            // Sino, mensaje en consola.
+            System.out.println("El árbol no contiene elementos.");
+        }
+    }
             
 }
