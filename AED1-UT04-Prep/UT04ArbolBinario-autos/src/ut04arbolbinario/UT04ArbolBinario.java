@@ -152,5 +152,17 @@ public class UT04ArbolBinario {
         // Imprimir resultado luego de la eliminación.
         System.out.println("Árbol RESULTADO (In-Orden): " + arbolAutos.inOrden());
         System.out.println("");
+        
+        /**
+         * PARTE 4
+         * 
+         * Analizaremos una expresión aritmética.
+         */
+        
+        
+        
+        
+        
+        
     }
 }

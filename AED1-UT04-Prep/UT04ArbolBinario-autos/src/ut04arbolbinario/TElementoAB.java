@@ -10,8 +10,9 @@ package ut04arbolbinario;
 class TElementoAB<T> implements IElementoAB<T> {
 
     protected Comparable etiqueta;
-    protected TElementoAB hijoIzq;
-    protected TElementoAB hijoDer;
+    protected TElementoAB hijoIzq;          // Para árboles.
+    protected TElementoAB hijoDer;          // Para árboles.
+    protected TElementoAB siguiente;        // Para listas.
     protected T datos;
 
     /**
@@ -22,6 +23,7 @@ class TElementoAB<T> implements IElementoAB<T> {
     public TElementoAB(Comparable unaEtiqueta, T unosDatos) {
         etiqueta = unaEtiqueta;
         datos = unosDatos;
+        siguiente = null;           // Para listas.
     }
 
     // Etiqueta.
@@ -56,6 +58,17 @@ class TElementoAB<T> implements IElementoAB<T> {
     @Override
     public T getDatos() {
         return this.datos;
+    }
+    
+    // Siguiente.
+    @Override
+    public TElementoAB getSiguiente() {
+        return this.siguiente;
+    }
+
+    @Override
+    public void setSiguiente(TElementoAB elSiguiente) {
+        this.siguiente = elSiguiente;
     }
     
     /**
@@ -312,6 +325,37 @@ class TElementoAB<T> implements IElementoAB<T> {
         
         return elHijo;
         
+    }
+    
+    
+    @Override
+    public TElementoAB<T> clonar() {
+        return new TElementoAB<>(this.etiqueta, this.datos);
+    }
+    
+    @Override
+    public void imprimir() {
+        System.out.println(this.etiqueta + " " + datos.toString());
+    }
+
+    @Override
+    public void imprimirEtiqueta() {
+        System.out.println(this.etiqueta);
+    }
+
+    @Override
+    public boolean equals(IElementoAB unNodo) {
+        return this.datos.equals(unNodo.getDatos());
+    }
+
+    @Override
+    public int compareTo(Comparable etiqueta) {
+        return this.etiqueta.compareTo(etiqueta);
+    }
+    
+    @Override
+    public int compareTo(IElementoAB<T> unNodo) {
+        return this.etiqueta.compareTo(unNodo.getEtiqueta());
     }
     
 }

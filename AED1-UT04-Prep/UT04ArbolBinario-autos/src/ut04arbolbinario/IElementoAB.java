@@ -38,14 +38,31 @@ public interface IElementoAB<T> {
     public void setHijoDer(TElementoAB<T> elemento);
 
     /**
+     * Retorna los datos contenidos en el elemento.
+     *
+     * @return
+     */
+    public T getDatos();
+    
+    /**
+     * Retorna el valor del siguiente nodo (usado en listas).
+     * 
+     */
+    public TElementoAB getSiguiente();
+
+    /**
+     * Asignar el siguiente del nodo (usado en listas).
+     * 
+     */
+    public void setSiguiente(TElementoAB elSiguiente);
+
+    /**
      * Busca un elemento dentro del arbol con la etiqueta indicada.
      *
      * @param unaEtiqueta del nodo a buscar
      * @return Elemento encontrado. En caso de no encontrarlo, retorna nulo.
      */
     public TElementoAB<T> buscar(Comparable unaEtiqueta);
-
- 
 
     /**
      * Inserta un elemento dentro del arbol.
@@ -77,18 +94,50 @@ public interface IElementoAB<T> {
     public String postOrden();
 
     /**
-     * Retorna los datos contenidos en el elemento.
-     *
-     * @return
-     */
-    public T getDatos();
-	
-    /**
      * Elimina un elemento dada una etiqueta.
      * 
      * @param unaEtiqueta
      * @return el elemento eliminado o null.
      */
     public TElementoAB eliminar(Comparable unaEtiqueta);
+
+    /**
+     * Clonar el nodo.
+     */
+    TElementoAB<T> clonar();
+
+    /**
+     * Compara la etiqueta del nodo con la etiqueta pasada por param.
+     * 
+     * @param etiqueta
+     * @return 
+     */
+    int compareTo(Comparable etiqueta);
+
+    /**
+     * Compara este nodo con otro nodo.
+     * 
+     * @param unNodo
+     * @return 
+     */
+    int compareTo(IElementoAB<T> unNodo);
+
+    /**
+     * Compara si el nodo es igual a otro.
+     * 
+     * @param unNodo
+     * @return 
+     */
+    boolean equals(IElementoAB unNodo);
+
+    /**
+     * Imprime info del nodo.
+     */
+    void imprimir();
+
+    /**
+     * Imprimir la etiqueta del nodo.
+     */
+    void imprimirEtiqueta();
     
 }
