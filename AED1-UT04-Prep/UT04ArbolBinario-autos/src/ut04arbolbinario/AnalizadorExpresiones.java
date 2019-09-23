@@ -9,68 +9,72 @@ package ut04arbolbinario;
 public class AnalizadorExpresiones {
     
     // Atributos.
-    protected String expresionRecibida;
+    protected String expresion;
 
     // Crear el árbol para análisis.
-    protected IArbolBB arbolBB = new TArbolBB();
-    
+    protected IArbolBB arbolExpr = new TArbolBB();
+
     // Crear la pila para análisis.
-    protected ILista pilaDeParentesis = new Lista();
+    protected ILista pilaParentesis = new Lista();
     
     // Constructor.
     public AnalizadorExpresiones () {
-        this.expresionRecibida = null;
+        this.expresion = null;
     }
 
     // Expresión Recibida.
     public String getExpresion() {
-        return this.expresionRecibida;
+        return this.expresion;
     }
     
-    public void setExpresion(String expresionParaAnalizar) {
-        this.expresionRecibida = expresionParaAnalizar;
+    public void setExpresion(String unaExpresion) {
+        this.expresion = unaExpresion;
     }
-    
+
     /**
-     * Procesar la expresión ingresándola en el àrbol.
+     * Procesar la expresión ingresándola en el árbol.
      */
-     public void cargarExpresionEnArbol (String expresion) {
-         
-         // Se procesa si la expresión existe.
-         if (this.expresionRecibida != null) {
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
+     public void analizarExpresion (String expresionParaAnalizar) {
+
+        // Se procesa solo si la expresión existe.
+        if (this.expresion != null) { 
+
+            // Asigno la expresión existente al objeto que se debió cargar previamente.
+            char[] exprAux = this.expresion.toCharArray();
+            
+            // Recorrrer el array de carácteres.
+            for (int i = 0; i < exprAux.length; i++) {
+                
+                // Tomo el caracter.
+                String charAux = Character.toString(exprAux[i]);
+                
+                // Caso: Descartamos los blancos.
+                if (charAux != " ") {
+                    
+                    if (arbolExpr) {
+                        
+                    }
+                    // Caso: es un "(".
+                    if (charAux == "(") {
+                        
+                        TElementoAB unElemento = new TElementoAB(exprAux[i], null);
+                        
+                        arbolExpr.insertar(unElemento);
+                        
+                    }
+                    
+                    
+                    
+                    
+                    
+                }
+            }
          }
          else {
              // La expresión no fue cargada o está vacía.
-             System.out.println("La expresión no fue cargada o está vacía !");
+             System.out.println("La expresión tiene valor nulo!");
          }
-         
-         
-         
-         
      }
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     /**
      * Retornar el árbol generado.

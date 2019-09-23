@@ -1,40 +1,34 @@
 /*
- * PROYECTO LISTAS.
+ * PREPARACIÓN.
  */
-package ut04listas0;
+package ut4_listas1;
 
 /**
- *
- * @author EQUIPO
+ * @author mstabile
  */
-public class UT04Listas0 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
+public class UT4_Listas1 {
+    
         // Crear una organización.
         Organizacion miEmpresa = new Organizacion();
         miEmpresa.setNombre("Addams Company");
-        
+                
         // Crear funcionarios y sus nodos.
-        Persona func1 = new Persona("Morticia", "Addams", "14567893");
+        IPersona func1 = new Persona("Morticia", "Addams", "14567893");
         func1.setEdad(22);
         
-        Persona func2 = new Persona("Homero", "Addams", "25468791");
+        IPersona func2 = new Persona("Homero", "Addams", "25468791");
         func2.setEdad(22);
         
-        Persona func3 = new Persona("Lucas", "Addams", "36549871");
+        IPersona func3 = new Persona("Lucas", "Addams", "36549871");
         func3.setEdad(22);
         
-        Persona func4 = new Persona("Merlina", "Addams", "16547893");
+        IPersona func4 = new Persona("Merlina", "Addams", "16547893");
         func4.setEdad(22);
         
-        INodo<Persona> nodoFunc1 = new Nodo (func1.getId(), func1);
-        INodo<Persona> nodoFunc2 = new Nodo (func2.getId(), func2);
-        INodo<Persona> nodoFunc3 = new Nodo (func3.getId(), func3);
-        INodo<Persona> nodoFunc4 = new Nodo (func4.getId(), func4);
+        INodo<IPersona> nodoFunc1 = new Nodo (func1.getId(), func1);
+        INodo<IPersona> nodoFunc2 = new Nodo (func2.getId(), func2);
+        INodo<IPersona> nodoFunc3 = new Nodo (func3.getId(), func3);
+        INodo<IPersona> nodoFunc4 = new Nodo (func4.getId(), func4);
 
         // Insertar los funcionarios en la lista de la organización.
         miEmpresa.listaPersonas.insertar(nodoFunc1);
@@ -53,6 +47,5 @@ public class UT04Listas0 {
 
         // Imprimir cantidad de personas en la empresa.
         System.out.println("Cantidad de funcionarios: " + miEmpresa.listaPersonas.cantElementos());
-    }
-    
+    }    
 }

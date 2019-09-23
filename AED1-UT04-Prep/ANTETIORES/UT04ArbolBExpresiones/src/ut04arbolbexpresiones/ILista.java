@@ -1,7 +1,7 @@
 /* 
  * INTERFASE ILISTA 
  */
-package ut04listas0;
+package ut04arbolbexpresiones;
 
 /**
  * @author EQUIPO
@@ -13,7 +13,7 @@ public interface ILista<T> {
      *
      * @param nodo - Nodo para agregar.
      */
-    public void insertar(INodo<T> nodo);
+    public void insertar(TElementoAB<T> nodo);
 
     /**
      * Buscar un nodo por su etiqueta.
@@ -21,7 +21,7 @@ public interface ILista<T> {
      * @param clave - Clave del nodo a buscar.
      * @return Devuelve el nodo encontrado o en caso contrario null.
      */
-    public INodo buscar(Comparable clave);
+    public IElementoAB buscar(Comparable clave);
 
     /**
      * Eliminar un nodo con la clave indicada.
@@ -37,7 +37,7 @@ public interface ILista<T> {
      * @param clave - Clave del nodo a eliminar.
      * @return Devuelve el nodo eliminado.
      */
-    public INodo eliminarRetornandoNodo(Comparable clave);
+    public IElementoAB eliminarRetornandoNodo(Comparable clave);
 
     
     /**
@@ -60,7 +60,7 @@ public interface ILista<T> {
      *
      * @return Primer nodo de la lista.
      */
-    public INodo<T> getPrimero();
+    public IElementoAB<T> getPrimero();
     
 //    /**
 //     * Insertar ordenado por SELECCIÓN DIRECTA.

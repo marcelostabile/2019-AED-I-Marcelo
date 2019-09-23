@@ -1,16 +1,15 @@
 /*
  * CLASE PERSONA.
  */
-package ut04listas0;
+package ut4_listas1;
 
 /**
- *
- * @author EQUIPO.
+ * @author mstabile.
  */
-public class Persona implements IPersona {
+public class Persona {
     
     // Atributos.
-    private String id;
+    private final String id;
     private String nombre;
     private String apellido;
     private int edad = 0;
@@ -28,34 +27,34 @@ public class Persona implements IPersona {
         this.apellido = apellido;
     }
 
-    @Override
     public String getId() { return this.id; }
     
-    @Override
     public String getNombre() { return this.nombre; }
-    @Override
+    
     public void setNombre(String nombre) { this.nombre = nombre; }
     
-    @Override
     public String getApellido() { return this.apellido; }
-    @Override
+    
     public void setApellido(String apellido) { this.apellido = apellido; }
     
-    @Override
     public int getEdad() { return this.edad; }
-    @Override
+    
     public void setEdad(int edad) { this.edad = edad; }
     
 //    public String getSexo() { return this.sexo; }
+    
 //    public void setSexo(String sexo) { this.sexo = sexo; }
 //    
 //    public String getDomicilio() { return this.domicilio; }
+    
 //    public void setDomicilio(String domicilio) { this.domicilio = domicilio; }
 //    
 //    public String getTelefono() { return this.telefono; }
+    
 //    public void setTelefono(String telefono) { this.telefono = telefono; }
 //    
 //    public String getCelular() { return this.celular; }
+    
 //    public void setCelular(String celular) { this.celular = celular; }
 
 }

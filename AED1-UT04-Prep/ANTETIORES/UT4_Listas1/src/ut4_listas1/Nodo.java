@@ -1,7 +1,7 @@
 /*
  * CLASE NODO.
  */
-package ut04listas0;
+package ut4_listas1;
 
 /**
  * @author EQUIPO.
