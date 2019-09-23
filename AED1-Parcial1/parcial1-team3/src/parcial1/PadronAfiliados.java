@@ -108,42 +108,4 @@ public class PadronAfiliados implements TPadronAfiliados {
         
         return afiliadosPorEspecialidad;
     }
-    
-    public void imprimirEstadisticas() {
-        
-        // Totales
-        int totalConAnotadas = 0;
-        int totalConHistoricas = 0;
-        int totalConsultas = 0;
-        
-        // Tomo el primer nodo del padrón de afiliados.
-        INodo<IAfiliado> nodoAfiliado = padronAfiliados.getPrimero();
-        
-        // Recorro el padrón calculando los totales.
-        while (nodoAfiliado != null) { 
-
-            // Obtener consultas del afiliado.
-            ILista<IConsulta> listaConsultasAnotadas = nodoAfiliado.getDato().getConsultasAnotadas();
-            ILista<IConsulta> listaConsultasHistoricas = nodoAfiliado.getDato().getConsultasHistoricas();
-            
-            // Sumar en el total de consultas.
-            totalConAnotadas += listaConsultasAnotadas.cantElementos();
-            totalConHistoricas += listaConsultasHistoricas.cantElementos();
-            
-            nodoAfiliado = nodoAfiliado.getSiguiente();
-        }
-        // Calculo el total de las consultas.
-        totalConsultas = totalConAnotadas + totalConHistoricas;
-        
-        // Imprimo todo.
-        System.out.println("ESTADISTICAS");
-        System.out.println();
-        System.out.println("Cantidad de afiliados: " + padronAfiliados.cantElementos());
-        System.out.println("Cant. Consultas Agendadas: " + totalConAnotadas);
-        System.out.println("Cant. Consultas Históricas: " + totalConHistoricas);
-        System.out.println("Total de Consultas: " + totalConsultas);
-        System.out.println();
-    }
-    
-
 }

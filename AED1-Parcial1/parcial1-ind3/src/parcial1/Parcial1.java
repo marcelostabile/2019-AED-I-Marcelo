@@ -151,6 +151,8 @@ public class Parcial1 {
         
         System.out.println("ESTADISTICAS FINALES");
         System.out.println();
+        System.out.println("Se procesan las consultas del día.");
+        System.out.println();
         System.out.println("Cantidad de afiliados: " + padronAfiliados.padronAfiliados.cantElementos());
         System.out.println("Cant. Consultas Agendadas: " + totalConAnotadas);
         System.out.println("Cant. Consultas Históricas: " + totalConHistoricas);
