@@ -157,7 +157,35 @@ public class UT04ArbolBinario {
          * PARTE 4
          * 
          * Analizaremos una expresión aritmética.
+         * 
+         * ( ( 2 + 3 ) * 10 ) + ( 10 * ( 2 + 3 ) ) = 120
          */
+        
+        // Expresiones.
+        String expresionAritmetica1 = "((2+3)*10)+(10*(2+3))";  // 120
+        String expresionAritmetica2 = "(2+3*10)+(10*2+3)";      // 55
+        String expresionAritmetica3 = "(2+3*10+10*2+3)";        // 55
+        
+        // Analizador de expresiones.
+        IAnalizadorExpresiones analizaExpr1 = new AnalizadorExpresiones();
+        IAnalizadorExpresiones analizaExpr2 = new AnalizadorExpresiones();
+        IAnalizadorExpresiones analizaExpr3 = new AnalizadorExpresiones();
+        
+        // Cargar las expresiones en el atributo String expresionRecibida.
+        analizaExpr1.setExpresion(expresionAritmetica1);
+        analizaExpr2.setExpresion(expresionAritmetica2);
+        analizaExpr3.setExpresion(expresionAritmetica3);
+        
+        // Imprimir las expresiones en consola.
+        analizaExpr1.imprimirExpresion();
+        analizaExpr1.imprimirResultado();
+        
+        analizaExpr2.imprimirExpresion();
+        analizaExpr2.imprimirResultado();
+        
+        analizaExpr3.imprimirExpresion();
+        analizaExpr3.imprimirResultado();
+
         
         
         
