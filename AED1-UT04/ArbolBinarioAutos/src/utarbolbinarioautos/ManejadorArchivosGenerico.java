@@ -1,7 +1,7 @@
 /*
  * MANEJADOR GENÉRICO DE ARCHIVOS 2019.
  */
-package ut04arbolbinario;
+package utarbolbinarioautos;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

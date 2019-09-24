@@ -27,7 +27,6 @@ public class Lista<T> implements ILista<T> {
             // La lista contiene elementos, lo inserto al final.
             INodo<T> nodoAux = primero;
             while (nodoAux.getSiguiente() != null) {
-                System.out.println(nodoAux.getEtiqueta() + " - " + nodoAux.getSiguiente());
                 nodoAux = nodoAux.getSiguiente();
             }
             nodoAux.setSiguiente(nodoNuevo);

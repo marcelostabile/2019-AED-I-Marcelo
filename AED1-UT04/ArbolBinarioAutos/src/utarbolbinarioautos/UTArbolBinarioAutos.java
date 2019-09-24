@@ -1,7 +1,7 @@
 /*
  * MAIN
  */
-package ut04arbolbinario;
+package utarbolbinarioautos;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import java.util.Arrays;
  *
  * @author EQUIPO
  */
-public class UT04ArbolBinario {
+public class UTArbolBinarioAutos {
 
     /**
      * @param args the command line arguments
@@ -26,7 +26,7 @@ public class UT04ArbolBinario {
          */
         
         // Archivos de trabajo.
-        String workFolder = "src/ut04arbolbinario/";
+        String workFolder = "src/utarbolbinarioautos/";
         
         String archOrigen = workFolder + "txtListaDeAutos.txt";
         String archBuscados = workFolder + "txtAutosBuscados.txt";

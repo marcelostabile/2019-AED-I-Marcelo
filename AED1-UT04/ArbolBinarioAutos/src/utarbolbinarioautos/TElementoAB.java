@@ -1,4 +1,4 @@
-package ut04arbolbinario;
+package utarbolbinarioautos;
 
 /*
  * ELEMENTO

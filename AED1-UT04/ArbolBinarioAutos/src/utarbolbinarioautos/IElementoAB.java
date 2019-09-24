@@ -1,4 +1,4 @@
-package ut04arbolbinario;
+package utarbolbinarioautos;
 
 public interface IElementoAB<T> {
 

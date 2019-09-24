@@ -1,18 +1,21 @@
 /*
- * INTERFASE
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package ut04arbolbinario;
+package utmanejadorarchivos;
 
 /**
- * @author EQUIPO.
+ *
+ * @author mstabile
  */
 public interface IManejadorArchivos {
 
     /**
      * ESCRIBIR ARCHIVO
      *
-     * @param archivo.
-     * @param listaLineas (lista con las lineas del archivo).
+     * @param archivo
+     * @param listaLineas (lista con las lineas del archivo)
      */
     void escribirArchivo(String archivo, String[] listaLineas);
 

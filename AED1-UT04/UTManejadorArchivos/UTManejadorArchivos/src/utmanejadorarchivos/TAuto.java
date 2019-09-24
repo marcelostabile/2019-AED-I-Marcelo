@@ -1,7 +1,7 @@
 /*
  * INTERFASE
  */
-package ut04arbolbinario;
+package utmanejadorarchivos;
 
 /**
  *
