@@ -34,6 +34,29 @@ public class UTListas {
         
         //Imprimir por pantalla.
         lista.imprimir();
+        System.out.println("");
+        
+        // Buscar en etiqueta. Imprimir el resultado.
+        INodo<Persona> resPer1 = lista.buscar("2");
+        resPer1.imprimir();
+        System.out.println("");
+        
+        Persona persona1 = resPer1.getDato();
+        System.out.println("Nombre: " + persona1.getNombre() + " " + persona1.getApellido());
+        System.out.println("");
+        
+        // Eliminar un nodo.
+        lista.eliminar("2");
+        lista.imprimir();
+        System.out.println("");
+        
+        // Modificar el nombre del nodo. 1 cambia su apellido a Gonzalez.
+        
+        // Creo un nodo con la persona buscada.
+        INodo<Persona> resPer2 = lista.buscar("1");
+        resPer2.getDato().setApellido("Gonzalez");
+        System.out.println("Cambio apellido: " + resPer2.getDato().getNombre() + " " + resPer2.getDato().getApellido());
+        System.out.println("");
         
     }
 }

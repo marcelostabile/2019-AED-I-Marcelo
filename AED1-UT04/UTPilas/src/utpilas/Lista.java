@@ -1,4 +1,4 @@
-package utlistas;
+package utpilas;
 
 /**
  * @author EQUIPO 1
@@ -17,17 +17,17 @@ public class Lista<T> implements ILista<T> {
      * @param nodoNuevo - Nodo a agregar
      */
     @Override
-    public void insertar(INodo nodoNuevo) { 
+    public void insertar(INodo<T> nodoNuevo) { 
         
         // Si la lista está vacía, inserto en primero.
         if (esVacia()) {
             primero = nodoNuevo;
-            
-        } else {
-            // La lista contiene elemento, lo inserto al final.
+        } 
+        else {
+            // La lista contiene elementos, lo inserto al final.
             INodo<T> nodoAux = primero;
-            
             while (nodoAux.getSiguiente() != null) {
+                System.out.println(nodoAux.getEtiqueta() + " - " + nodoAux.getSiguiente());
                 nodoAux = nodoAux.getSiguiente();
             }
             nodoAux.setSiguiente(nodoNuevo);
