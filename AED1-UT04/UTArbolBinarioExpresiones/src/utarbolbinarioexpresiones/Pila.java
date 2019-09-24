@@ -1,7 +1,7 @@
 /*
  * CLASE PILA.
  */
-package utpilas;
+package utarbolbinarioexpresiones;
 
 /**
  * @author mstabile.
