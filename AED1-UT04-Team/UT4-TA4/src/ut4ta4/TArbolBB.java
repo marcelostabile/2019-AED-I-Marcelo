@@ -95,7 +95,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
      */
     @Override
     public int obtenerNivel(Comparable unaEtiqueta) { 
-        if (this.raiz != null) { 
+        if (raiz != null) { 
             return raiz.obtenerNivel(unaEtiqueta);
         } 
         else {
@@ -114,5 +114,21 @@ public class TArbolBB<T> implements IArbolBB<T> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
+    /**
+     * Obtener la cantidad de hojas.
+     * 
+     * @return int
+     */
+    @Override
+    public int obtenerCantidadHojas() { 
+        if (!this.esVacio()) { 
+            return this.obtenerCantidadHojas();
+        } 
+        else {
+            return 0;
+        }
+    }
+    
+    
+    
 }

@@ -17,7 +17,10 @@ public class UT4TA4 {
         /**
          * CREAR EL ÁRBOL.
          */
-        IArbolBB<Integer> arbolTA4 = new TArbolBB<>();
+        
+        IArbolBB<Integer> arbol1 = new TArbolBB<>();
+        IArbolBB<Integer> arbol2 = new TArbolBB<>();
+        IArbolBB<Integer> arbol3 = new TArbolBB<>();
         
         /**
          * MANEJADOR DE ARCHIVOS.
@@ -33,20 +36,61 @@ public class UT4TA4 {
         
         // Instanciar el manejador de archivos.
         IManejadorArchivos manejadorArchivos = new ManejadorArchivosGenerico();
+
+        /**
+         * ARCHIVO 1.
+         */
         
         // Leer el archivo y retornar un array.
-        String[] lineasArchivo = manejadorArchivos.leerArchivo(arch1);
+        // Cambiando esta linea seleccionamos el archivo que queremos usar (arch1, arch2 o arch3).
+        String[] lineasArchivo1 = manejadorArchivos.leerArchivo(arch1);
         
         // Para cada registro en el array.
-        for (String linea : lineasArchivo) { 
-            
-            //String[] reg = linea.split(",");
-            
-            TElementoAB unElemento = new TElementoAB(linea, linea);
-            
-            arbolTA4.insertar(unElemento);
-            
+        for (String linea1 : lineasArchivo1) { 
+
+            // Creo un elemento con cada linea y lo inserto en el árbol.
+            TElementoAB unElemento1 = new TElementoAB(linea1, linea1);
+            //arbol1.insertar(unElemento1);
         }
+        
+        /**
+         * ARCHIVO 2.
+         */
+        String[] lineasArchivo2 = manejadorArchivos.leerArchivo(arch2);
+        for (String linea2 : lineasArchivo2) { 
+            TElementoAB unElemento2 = new TElementoAB(linea2, linea2);
+            arbol2.insertar(unElemento2);
+        }
+
+        /**
+         * ARCHIVO 3.
+         */
+        String[] lineasArchivo3 = manejadorArchivos.leerArchivo(arch3);
+        for (String linea3 : lineasArchivo3) { 
+            TElementoAB unElemento3 = new TElementoAB(linea3, linea3);
+            arbol3.insertar(unElemento3);
+        }
+
+        /**
+         * RESULTADOS.
+         */
+        System.out.println("ÁRBOL 1");
+        System.out.println("");
+        System.out.println("Cantidad de hojas: " + arbol1.obtenerCantidadHojas());
+        System.out.println("El elemento se encuentra en el nivel " + arbol1.obtenerNivel(5376));
+        System.out.println("");
+        
+        System.out.println("ÁRBOL 2");
+        System.out.println("");
+        System.out.println("Cantidad de hojas: " + arbol2.obtenerCantidadHojas());
+        System.out.println("El elemento se encuentra en el nivel " + arbol3.obtenerNivel(104));
+        System.out.println("");
+        
+        System.out.println("ÁRBOL 3");
+        System.out.println("");
+        System.out.println("Cantidad de hojas: " + arbol3.obtenerCantidadHojas());
+        System.out.println("El elemento se encuentra en el nivel " + arbol3.obtenerNivel(437));
+        System.out.println("");
+        
     }
-    
 }

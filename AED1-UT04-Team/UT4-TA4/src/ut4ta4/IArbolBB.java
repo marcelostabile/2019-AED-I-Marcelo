@@ -68,5 +68,12 @@ public interface IArbolBB<T> {
      */
     public int obtenerTamanio();
 
+    /**
+     * Obtener la cantidad de hojas.
+     * 
+     * @return int
+     */
+    public int obtenerCantidadHojas();
+    
 }
 
