@@ -20,11 +20,13 @@ public class ListaEncadenada1 {
         Nodo nodo2 = new Nodo(2, null);
         Nodo nodo3 = new Nodo(3, null);
         
-        // Los nodos no están enlazados.
-        // Imprimimos su valor.
+        // Imprimimos los nodos.
+        System.out.println("IMPRIMIMOS VALOR DE LOS NODOS SIN ENLAZAR");
         System.out.println(nodo1);
         System.out.println(nodo2);
         System.out.println(nodo3);
+        System.out.println("");
+
         
         // Enlazamos los nodos.
         nodo1.prox = nodo2;
@@ -32,11 +34,14 @@ public class ListaEncadenada1 {
         nodo3.prox = null;
         
         // Imprimimos lista con el método WHILE.
-        System.out.println("Imprimimos lista con el método WHILE.");
+        System.out.println("IMPRIMIMOS LISTA UTILIZANDO WHILE");
         imprimirLista(nodo1);
+        System.out.println("");
         
         // Imprimir inverso.
+        System.out.println("IMPRIMIMOS LISTA INVERSAMENTE");
         imprimirListaInverso(nodo1);
+
     }
 
     private static void imprimirLista(Nodo lista) {
