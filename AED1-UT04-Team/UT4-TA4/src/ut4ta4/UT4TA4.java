@@ -40,9 +40,9 @@ public class UT4TA4 {
         // Para cada registro en el array.
         for (String linea : lineasArchivo) { 
             
-            String[] reg = linea.split(",");
+            //String[] reg = linea.split(",");
             
-            TElementoAB<Integer> unElemento = new TElementoAB(reg[0], reg[1]);
+            TElementoAB unElemento = new TElementoAB(linea, linea);
             
             arbolTA4.insertar(unElemento);
             
