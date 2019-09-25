@@ -17,7 +17,7 @@ public class UTManejadorArchivos {
          * MANEJADOR DE ARCHIVOS.
          */
         // Definir la carpeta de los archivos.
-        String workFolder = "src/utarbolbinarioautos/";
+        String workFolder = "src/utmanejadorarchivos/";
         // Definir los archivos de trabajo.
         String archOrigen = workFolder + "txtListaDeAutos.txt";
         String archSeleccion = workFolder + "txtAutosBuscados.txt";
