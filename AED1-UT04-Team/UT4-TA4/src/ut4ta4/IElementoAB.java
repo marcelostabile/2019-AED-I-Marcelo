@@ -1,4 +1,4 @@
-package ut4.ta4;
+package ut4ta4;
 
 public interface IElementoAB<T> {
 
@@ -90,7 +90,15 @@ public interface IElementoAB<T> {
      * @return el elemento eliminado o null.
      */
     public TElementoAB eliminar(Comparable unaEtiqueta);
-    
+
+    /**
+     * Obtener el nivel donde se encuentra una etiqueta dada.
+     * 
+     * @param unaEtiqueta
+     * @return 
+     */
+    public int obtenerNivel(Comparable unaEtiqueta);
+            
     /**
      * Obtener la altura de un árbol.
      * 
@@ -107,4 +115,10 @@ public interface IElementoAB<T> {
      */
     public int obtenerTamanio();
 
+        /**
+     * Obtener la cantidad de hojas.
+     * 
+     * @return int
+     */
+    public int obtenerCantidadHojas();
 }

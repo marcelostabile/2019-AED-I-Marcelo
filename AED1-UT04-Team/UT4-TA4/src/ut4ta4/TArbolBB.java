@@ -1,4 +1,4 @@
-package ut4.ta4;
+package ut4ta4;
 
 /**
  * @author EQUIPO
@@ -87,6 +87,23 @@ public class TArbolBB<T> implements IArbolBB<T> {
         }
     }
 
+    /**
+     * Obtener el nivel donde se encuentra una etiqueta dada.
+     * 
+     * @param unaEtiqueta
+     * @return 
+     */
+    @Override
+    public int obtenerNivel(Comparable unaEtiqueta) { 
+        if (this.raiz != null) { 
+            return raiz.obtenerNivel(unaEtiqueta);
+        } 
+        else {
+            return -1;
+        }
+    }
+
+
     @Override
     public int obtenerAltura() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -96,5 +113,6 @@ public class TArbolBB<T> implements IArbolBB<T> {
     public int obtenerTamanio() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-            
+
+
 }

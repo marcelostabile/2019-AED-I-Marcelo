@@ -1,5 +1,4 @@
-package ut4.ta4;
-
+package ut4ta4;
 /*
  * ELEMENTO
  */
@@ -312,6 +311,69 @@ class TElementoAB<T> implements IElementoAB<T> {
         
         return elHijo;
         
+    }
+
+    /**
+     * Obtener el nivel donde se encuentra una etiqueta dada.
+     * 
+     * @param unaEtiqueta
+     * @return int - el nivel donde se encuentra.
+     */
+    @Override
+    public int obtenerNivel(Comparable unaEtiqueta) {
+        
+        // Si el nodo actual es la etiqueta búscada.
+        if (this.etiqueta.compareTo(unaEtiqueta) == 0) {
+            return 0;
+        } else {
+            if (unaEtiqueta.compareTo(this.etiqueta) < 0) { 
+                // Si la etiqueta buscada es menor a la etiqueta del nodo, revisa el hijo izq.
+                if (hijoIzq != null) {
+                    return 1 + hijoIzq.obtenerNivel(unaEtiqueta);
+                } else {
+                    return 0;
+                }
+            }
+            // Si la etiqueta buscada es mayor a la etiqueta del nodo, revisa el hijo der.
+            if (hijoDer != null) {
+                return 1 + hijoDer.obtenerNivel(unaEtiqueta);
+            } 
+            else {
+                // Si no la encuentra y no tiene más hijos, retorna 0.
+                return 0;
+            }
+        }
+    }
+    
+    /**
+     * Obtener la cantidad de hojas.
+     * 
+     * @return int
+     */
+    @Override
+    public int obtenerCantidadHojas() { 
+        
+        // Si no tiene hijos, es una hoja, devuelve uno.
+        if (hijoIzq == null && hijoDer == null) {
+            return 1;
+        }
+        
+        // Inicializo la cantidad de hojas.
+        int hojasIzquierdo = 0;
+        int hojasDerecho = 0;
+        
+        // Si tiene Hijo Izquierdo.
+        if (hijoIzq != null) {
+            hojasIzquierdo = hijoIzq.obtenerCantidadHojas();
+        }
+        
+        // Si tiene Hijo Derecho.
+        if (hijoDer != null) {
+            hojasDerecho = hijoDer.obtenerCantidadHojas();
+        }
+        
+        // Retorna el valor.
+        return hojasIzquierdo + hojasDerecho;
     }
 
     @Override

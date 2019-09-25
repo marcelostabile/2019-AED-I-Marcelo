@@ -1,4 +1,4 @@
-package ut4.ta4;
+package ut4ta4;
 
 public interface IArbolBB<T> {
 
@@ -47,6 +47,14 @@ public interface IArbolBB<T> {
     public void eliminar(Comparable unaEtiqueta);
 
     /**
+     * Obtener el nivel donde se encuentra una etiqueta dada.
+     * 
+     * @param unaEtiqueta
+     * @return 
+     */
+    public int obtenerNivel(Comparable unaEtiqueta);
+    
+    /**
      * Obtener la altura de un árbol.
      * 
      * @return altura del árbol.
@@ -59,6 +67,6 @@ public interface IArbolBB<T> {
      * @return tamaño del árbol.
      */
     public int obtenerTamanio();
-    
+
 }
 
