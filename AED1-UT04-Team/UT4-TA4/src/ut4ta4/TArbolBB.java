@@ -122,7 +122,8 @@ public class TArbolBB<T> implements IArbolBB<T> {
     @Override
     public int obtenerCantidadHojas() { 
         if (!this.esVacio()) { 
-            return this.obtenerCantidadHojas();
+            int resultado = this.obtenerCantidadHojas();
+            return resultado;
         } 
         else {
             return 0;

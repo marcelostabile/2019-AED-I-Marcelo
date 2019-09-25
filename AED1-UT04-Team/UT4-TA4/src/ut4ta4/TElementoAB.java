@@ -345,36 +345,60 @@ class TElementoAB<T> implements IElementoAB<T> {
         }
     }
     
+    
     /**
      * Obtener la cantidad de hojas.
      * 
      * @return int
      */
     @Override
-    public int obtenerCantidadHojas() { 
+    public int obtenerCantidadHojas() {
         
-        // Si no tiene hijos, es una hoja, devuelve uno.
         if (hijoIzq == null && hijoDer == null) {
             return 1;
         }
         
-        // Inicializo la cantidad de hojas.
-        int hojasIzquierdo = 0;
-        int hojasDerecho = 0;
-        
-        // Si tiene Hijo Izquierdo.
-        if (hijoIzq != null) {
-            hojasIzquierdo = hijoIzq.obtenerCantidadHojas();
+        if (hijoIzq == null && hijoDer != null) {
+            return hijoDer.obtenerCantidadHojas();
         }
         
-        // Si tiene Hijo Derecho.
-        if (hijoDer != null) {
-            hojasDerecho = hijoDer.obtenerCantidadHojas();
+        if (hijoIzq != null && hijoDer == null) {
+            return hijoIzq.obtenerCantidadHojas();
         }
         
-        // Retorna el valor.
-        return hojasIzquierdo + hojasDerecho;
+        return hijoIzq.obtenerCantidadHojas() + hijoDer.obtenerCantidadHojas();
     }
+    
+//    /**
+//     * Obtener la cantidad de hojas.
+//     * 
+//     * @return int
+//     */
+//    @Override
+//    public int obtenerCantidadHojas() { 
+//        
+//        // Si no tiene hijos, es una hoja, devuelve uno.
+//        if (hijoIzq == null && hijoDer == null) {
+//            return 1;
+//        }
+//
+//        // Inicializo la cantidad de hojas.
+//        int hojasIzquierdo = 0;
+//        int hojasDerecho = 0;
+//        
+//        // Si tiene Hijo Izquierdo.
+//        if (hijoIzq != null) {
+//            hojasIzquierdo = hijoIzq.obtenerCantidadHojas();
+//        }
+//        
+//        // Si tiene Hijo Derecho.
+//        if (hijoDer != null) {
+//            hojasDerecho = hijoDer.obtenerCantidadHojas();
+//        }
+//        
+//        // Retorna el valor.
+//        return hojasIzquierdo + hojasDerecho;
+//    }
 
     @Override
     public int obtenerAltura() {

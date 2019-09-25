@@ -50,7 +50,7 @@ public class UT4TA4 {
 
             // Creo un elemento con cada linea y lo inserto en el árbol.
             TElementoAB unElemento1 = new TElementoAB(linea1, linea1);
-            //arbol1.insertar(unElemento1);
+            arbol1.insertar(unElemento1);
         }
         
         /**
