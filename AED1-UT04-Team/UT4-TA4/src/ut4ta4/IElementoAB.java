@@ -17,18 +17,18 @@ public interface IElementoAB<T> {
     public TElementoAB<T> getHijoIzq();
 
     /**
-     * Obtiene el hijo derecho del nodo.
-     *
-     * @return Hijo derecho del nodo.
-     */
-    public TElementoAB<T> getHijoDer();
-
-    /**
      * Asigna el hijo izquierdo del nodo.
      *
      * @return Elemento a ser asignado como hijo izquierdo.
      */
     public void setHijoIzq(TElementoAB<T> elemento);
+    
+    /**
+     * Obtiene el hijo derecho del nodo.
+     *
+     * @return Hijo derecho del nodo.
+     */
+    public TElementoAB<T> getHijoDer();
 
     /**
      * Asigna el hijo derecho del nodo.
@@ -38,14 +38,19 @@ public interface IElementoAB<T> {
     public void setHijoDer(TElementoAB<T> elemento);
 
     /**
+     * Retorna los datos contenidos en el elemento.
+     *
+     * @return
+     */
+    public T getDatos();
+    
+    /**
      * Busca un elemento dentro del arbol con la etiqueta indicada.
      *
      * @param unaEtiqueta del nodo a buscar
      * @return Elemento encontrado. En caso de no encontrarlo, retorna nulo.
      */
     public TElementoAB<T> buscar(Comparable unaEtiqueta);
-
- 
 
     /**
      * Inserta un elemento dentro del arbol.
@@ -77,13 +82,6 @@ public interface IElementoAB<T> {
     public String postOrden();
 
     /**
-     * Retorna los datos contenidos en el elemento.
-     *
-     * @return
-     */
-    public T getDatos();
-	
-    /**
      * Elimina un elemento dada una etiqueta.
      * 
      * @param unaEtiqueta
@@ -91,6 +89,13 @@ public interface IElementoAB<T> {
      */
     public TElementoAB eliminar(Comparable unaEtiqueta);
 
+    /**
+     * Determina si es completo.
+     * 
+     * @return boolean - verdadero = es completo.
+     */
+    public boolean esCompleto();
+    
     /**
      * Obtener el nivel donde se encuentra una etiqueta dada.
      * 
@@ -121,4 +126,91 @@ public interface IElementoAB<T> {
      * @return int
      */
     public int obtenerCantidadHojas();
+
+    /**
+     * Retorna cantidades de nodos internos no completos
+     *
+     * @return cantidad de nodos internos no completos
+     */
+    public int internosNoCompletos();
+            
+    /**
+     * Retorna cantidades de nodos internos completos
+     *
+     * @return cantidad de nodos internos completos
+     */
+    public int internosCompletos();
+    
+
+    /**
+     * Devuelve el mayor elemento.
+     * 
+     * @return TElementoAB<T>.
+     */
+    public TElementoAB<T> obtenerMayorElemento();
+            
+    /**
+     * Devuelve el menor elemento.
+     * 
+     * @return TElementoAB<T>.
+     */
+    public TElementoAB<T> obtenerMenorElemento();
+            
+    /**
+     * Retorna clave inmediata anterior
+     *
+     * @param etiqueta clave del elemento
+     * @return clave del elemento
+     */
+    public Comparable obtenerClaveInmediataAnterior(Comparable etiqueta);
+    
+    /**
+     * Retorna clave inmediata anterior
+     *
+     * @param etiqueta clave del elemento
+     * @param predecesor auxiliar para guardar predecesor
+     * @return clave del elemento
+     */
+    public Comparable obtenerClaveInmediataAnterior(Comparable etiqueta, Comparable predecesor);
+    
+    /**
+     * Retorna clave inmediata posterior
+     *
+     * @param etiqueta clave del elemento
+     * @return clave del elemento
+     */
+    public Comparable obtenerClaveInmediataPosterior(Comparable etiqueta);
+    
+    /**
+     * Retorna clave inmediata posterior
+     *
+     * @param etiqueta clave del elemento
+     * @param sucesor auxiliar para guardar sucesor
+     * @return clave del elemento
+     */
+    public Comparable obtenerClaveInmediataPosterior(Comparable etiqueta, Comparable sucesor);
+    
+    /**
+     * Retorna padre del elemento con la clave buscada
+     *
+     * @param clave
+     * @return elemento padre
+     */
+    public TElementoAB<T> obtenerPadre(Comparable clave);
+    
+    /**
+     * Devuelve un string con las hojas de un nivel.
+     * 
+     * @param cont
+     * @return string
+     */
+    public String obtenerHojasConNivel(int cont);
+
+    /**
+     * Retorna si este es un árbol de búsqueda.
+     * 
+     * @return boolean.
+     */
+    public boolean esABB();
+    
 }

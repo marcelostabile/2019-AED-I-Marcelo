@@ -76,20 +76,29 @@ public class UT4TA4 {
          */
         System.out.println("ÁRBOL 1");
         System.out.println("");
+        System.out.println("Altura del árbol: " + arbol1.obtenerAltura());
+        System.out.println("Tamaño del árbol: " + arbol1.obtenerTamanio());
         System.out.println("Cantidad de hojas: " + arbol1.obtenerCantidadHojas());
-        System.out.println("El elemento se encuentra en el nivel " + arbol1.obtenerNivel(5376));
+        String nro1 = "5354";
+        System.out.println("El elemento " + nro1 + " se encuentra en el nivel " + arbol1.obtenerNivel(nro1));
         System.out.println("");
         
         System.out.println("ÁRBOL 2");
         System.out.println("");
+        System.out.println("Altura del árbol: " + arbol2.obtenerAltura());
+        System.out.println("Tamaño del árbol: " + arbol2.obtenerTamanio());
         System.out.println("Cantidad de hojas: " + arbol2.obtenerCantidadHojas());
-        System.out.println("El elemento se encuentra en el nivel " + arbol3.obtenerNivel(104));
+        String nro2 = "192";
+        System.out.println("El elemento " + nro2 + " se encuentra en el nivel " + arbol1.obtenerNivel(nro2));
         System.out.println("");
         
         System.out.println("ÁRBOL 3");
         System.out.println("");
+        System.out.println("Altura del árbol: " + arbol3.obtenerAltura());
+        System.out.println("Tamaño del árbol: " + arbol3.obtenerTamanio());
         System.out.println("Cantidad de hojas: " + arbol3.obtenerCantidadHojas());
-        System.out.println("El elemento se encuentra en el nivel " + arbol3.obtenerNivel(437));
+        String nro3 = "256";
+        System.out.println("El elemento " + nro3 + " se encuentra en el nivel " + arbol1.obtenerNivel(nro3));
         System.out.println("");
         
     }
