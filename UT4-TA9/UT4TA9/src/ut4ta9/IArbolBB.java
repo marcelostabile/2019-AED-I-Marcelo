@@ -1,3 +1,6 @@
+/**
+ * INTERFASE IArbolBB.
+ */ 
 package ut4ta9;
 
 public interface IArbolBB<T> {

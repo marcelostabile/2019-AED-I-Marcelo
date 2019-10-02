@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * INTERFASE IAfiliado.
  */
 package ut4ta9;
 
@@ -39,7 +37,14 @@ public interface IAfiliado {
     
     public void setApellido(String unApellido);
     
-     /**
+    /**
+     * Obtiene el listado de las consultas en las que el afiliado se encuentra anotado. 
+     *
+     * @return Lista de consultas anotadas.
+     */
+    public ILista<IConsulta> getConsultasAgendadas();
+
+    /**
      * Obtiene el listado de las consultas históricas de un afiliado.
      *
      * @return Lista de consultas históricas
@@ -47,13 +52,8 @@ public interface IAfiliado {
     public ILista<IConsulta> getConsultasHistoricas();
     
     /**
-     * Obtiene el listado de las consultas en las que el afiliado se encuentra anotado. 
-     *
-     * @return Lista de consultas anotadas.
+     * Actualizar las consultas del afiliado.
      */
-    public ILista<IConsulta> getConsultasAnotadas();
-
     public void actualizarConsultas();
-    public void actualizarConsultaAux();
             
 }

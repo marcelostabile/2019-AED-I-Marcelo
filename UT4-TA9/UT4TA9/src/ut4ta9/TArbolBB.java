@@ -1,13 +1,17 @@
+/**
+ * CLASE TArbolBB.
+ */
 package ut4ta9;
 
 /**
- * @author EQUIPO
+ * @author EQUIPO 1.
  */
 public class TArbolBB<T> implements IArbolBB<T> {
 
-    // public static final String separadorGuion = "-";
     // Atributos.
     private IElementoAB<T> raiz;
+
+    public static final String separadorGuion = "-";
 
     // Constructor.
     public TArbolBB() {
@@ -15,7 +19,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
     }
 
     /**
-     * Obtener la raiz, si no existe retorna null.
+     * Devuelve la raiz, si no existe retorna null.
      *
      * @return raiz.
      */
@@ -25,10 +29,19 @@ public class TArbolBB<T> implements IArbolBB<T> {
     }
 
     /**
+     * Asignar raiz.
+     * 
+     * @param unaRaiz.
+     */
+    public void setRaiz(IElementoAB<T> unaRaiz) {
+        this.raiz = unaRaiz;
+    }
+
+    /**
      * Insertar un elemento.
      *
      * @param unElemento
-     * @return
+     * @return boolean.
      */
     @Override
     public boolean insertar(TElementoAB<T> unElemento) {
@@ -40,7 +53,11 @@ public class TArbolBB<T> implements IArbolBB<T> {
         }
     }
 
-    // Buscar.
+    /**
+     * Buscar un elemento.
+     * 
+     * @param unaEtiqueta (Comparable).
+     */
     @Override
     public TElementoAB<T> buscar(Comparable unaEtiqueta) {
 
@@ -51,14 +68,20 @@ public class TArbolBB<T> implements IArbolBB<T> {
         }
     }
 
-    // EsVacio.
+    /**
+     * Devuelve si la raíz está vacía, teniendo valor null.
+     * 
+     * @return boolean.
+     */
     @Override
     public boolean esVacio() {
         return (raiz == null);
     }
 
+    /** 
+     * Recorrido en preOrden.
+     */
     @Override
-    // Recorrido preOrden.
     public String preOrden() {
         if (esVacio()) {
             return null;
@@ -67,8 +90,10 @@ public class TArbolBB<T> implements IArbolBB<T> {
         }
     }
 
+    /** 
+     * Recorrido en inOrden.
+     */
     @Override
-    // Recorrido inOrden.
     public String inOrden() {
         if (esVacio()) {
             return null;
@@ -77,14 +102,18 @@ public class TArbolBB<T> implements IArbolBB<T> {
         }
     }
 
+    // Recorrido en inOrden, pasando una ILista<T>.
+    @Override
     public void inOrden(Lista<T> unaLista) {
         if (!esVacio()) {
             raiz.inOrden(unaLista);
         }
     }
 
+    /** 
+     * Recorrido en postOrden.
+     */
     @Override
-    // Recorrido postOrden.
     public String postOrden() {
         if (esVacio()) {
             return null;
@@ -93,15 +122,16 @@ public class TArbolBB<T> implements IArbolBB<T> {
         }
     }
 
+    /** 
+     * Eliminar un nodo dada una etiqueta.
+     */
     @Override
-    // Eliminar un nodo dada una etiqueta.
     public void eliminar(Comparable unaEtiqueta) {
 
         // Verificamos si el árbol contiene elementos o está vacío.
         if (raiz != null) {
             raiz = raiz.eliminar(unaEtiqueta);
         } else {
-            // Sino, mensaje en consola.
             System.out.println("El árbol no contiene elementos.");
         }
     }
@@ -109,10 +139,11 @@ public class TArbolBB<T> implements IArbolBB<T> {
     /**
      * Determina si el árbol es completo.
      *
-     * @return boolean - verdadero = es completo.
+     * @return boolean <- verdadero = es completo.
      */
     @Override
     public boolean esCompleto() {
+        // Verificamos si el árbol NO contiene elemento (raíz == null).
         if (esVacio()) {
             return false;
         } else {
@@ -124,7 +155,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
      * Obtener el nivel donde se encuentra una etiqueta dada.
      *
      * @param unaEtiqueta
-     * @return
+     * @return integer.
      */
     @Override
     public int obtenerNivel(Comparable unaEtiqueta) {
@@ -164,7 +195,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
     /**
      * Obtener la cantidad de hojas.
      *
-     * @return int
+     * @return integer.
      */
     @Override
     public int obtenerCantidadHojas() {
@@ -176,23 +207,24 @@ public class TArbolBB<T> implements IArbolBB<T> {
     }
 
     /**
-     * Retorna cantidades de nodos internos no completos
+     * Retorna cantidades de nodos internos no completos.
      *
-     * @return cantidad de nodos internos no completos
+     * @return integer. Cantidad de nodos internos no completos.
      */
     @Override
     public int internosNoCompletos() {
         if (esVacio()) {
             return 0;
-        } else {
+        } else 
+        {
             return raiz.internosNoCompletos();
         }
     }
 
     /**
-     * Retorna cantidades de nodos internos completos
+     * Retorna cantidades de nodos internos completos.
      *
-     * @return cantidad de nodos internos completos
+     * @return integer. Cantidad de nodos internos completos.
      */
     @Override
     public int internosCompletos() {
@@ -204,10 +236,10 @@ public class TArbolBB<T> implements IArbolBB<T> {
     }
 
     /**
-     * Retorna clave inmediata anterior
+     * Retorna clave inmediata anterior.
      *
-     * @param etiqueta clave del elemento
-     * @return clave del elemento
+     * @param etiqueta clave del elemento.
+     * @return clave del elemento.
      */
     @Override
     public Comparable obtenerClaveInmediataAnterior(Comparable etiqueta) {
@@ -215,11 +247,11 @@ public class TArbolBB<T> implements IArbolBB<T> {
     }
 
     /**
-     * Retorna clave inmediata anterior
+     * Retorna clave inmediata anterior.
      *
-     * @param etiqueta clave del elemento
-     * @param predecesor auxiliar para guardar predecesor
-     * @return clave del elemento
+     * @param etiqueta clave del elemento.
+     * @param predecesor auxiliar para guardar predecesor.
+     * @return clave del elemento.
      */
     @Override
     public Comparable obtenerClaveInmediataAnterior(Comparable etiqueta, Comparable predecesor) {
@@ -263,7 +295,6 @@ public class TArbolBB<T> implements IArbolBB<T> {
     /**
      * Devuelve un string con las hojas de un nivel.
      *
-     * @param cont
      * @return string
      */
     @Override

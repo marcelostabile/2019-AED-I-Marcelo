@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * INTEFASE IConsulta.
  */
 package ut4ta9;
 
@@ -12,7 +10,6 @@ import java.util.Date;
  * @author bernardorychtenberg
  */
 public interface IConsulta {
-    
     
     /**
      * Obtiene la fecha de la consulta.

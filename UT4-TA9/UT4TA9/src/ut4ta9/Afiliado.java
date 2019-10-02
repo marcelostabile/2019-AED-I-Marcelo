@@ -1,3 +1,6 @@
+/**
+ * CLASE Afiliado.
+ */
 package ut4ta9;
 
 /**
@@ -19,9 +22,9 @@ public class Afiliado implements IAfiliado {
     }
 
     /*
-     * Lista Consultas Anotadas.
+     * Lista Consultas Agendadas.
      */
-    public ILista<IConsulta> listaConsultasAnotadas = new Lista<>();
+    public ILista<IConsulta> listaConsultasAgendadas = new Lista<>();
 
     /*
      * Lista Consultas Históricas.
@@ -68,26 +71,30 @@ public class Afiliado implements IAfiliado {
     }
 
     /**
-     * Obtiene el listado de las consultas en las que el afiliado se encuentra
-     * anotado.
+     * Devuelve el listado de las consultas en las que 
+     * el afiliado se encuentra agendado.
      *
-     * @return Lista de consultas anotadas.
+     * @return Lista de consultas agendadas.
      */
     @Override
-    public ILista<IConsulta> getConsultasAnotadas() {
-        return this.listaConsultasAnotadas;
+    public ILista<IConsulta> getConsultasAgendadas() {
+        return this.listaConsultasAgendadas;
     }
 
     /**
-     * Obtiene el listado de las consultas históricas.
+     * Devuelve el listado de las consultas históricas.
      *
-     * @return Lista de consultas anotadas.
+     * @return Lista de consultas agendadas.
      */
     @Override
     public ILista<IConsulta> getConsultasHistoricas() {
         return this.listaConsultasHistoricas;
     }
 
+    
+    
+    
+    
     
     /**
      * Actualiza las consultas .
@@ -110,11 +117,11 @@ public class Afiliado implements IAfiliado {
     @Override
     public void actualizarConsultaAux() {
 
-        listaConsultasAnotadas = this.getConsultasAnotadas();
+        listaConsultasAgendadas = this.getConsultasAgendadas();
         listaConsultasHistoricas = this.getConsultasHistoricas();
 
         // Tomo la primer consulta.
-        INodo<IConsulta> nodoConsulta = listaConsultasAnotadas.getPrimero();
+        INodo<IConsulta> nodoConsulta = listaConsultasAgendadas.getPrimero();
         INodo<IConsulta> nodoConsultaAux = new Nodo<>();
 
         // Recorro todas sus consultas.
@@ -129,7 +136,7 @@ public class Afiliado implements IAfiliado {
 
                 listaConsultasHistoricas.insertar(nodoConsulta);
 
-                listaConsultasAnotadas.eliminar(nodoConsulta.getEtiqueta());
+                listaConsultasAgendadas.eliminar(nodoConsulta.getEtiqueta());
             }
             nodoConsulta = nodoConsultaAux.getSiguiente();
         }

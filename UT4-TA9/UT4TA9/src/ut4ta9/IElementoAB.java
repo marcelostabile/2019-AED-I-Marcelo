@@ -18,8 +18,6 @@ public interface IElementoAB<T> {
 
     /**
      * Asigna el hijo izquierdo del nodo.
-     *
-     * @return Elemento a ser asignado como hijo izquierdo.
      */
     public void setHijoIzq(TElementoAB<T> elemento);
 
@@ -32,8 +30,6 @@ public interface IElementoAB<T> {
 
     /**
      * Asigna el hijo derecho del nodo.
-     *
-     * @return Elemento a ser asignado como hijo derecho.
      */
     public void setHijoDer(TElementoAB<T> elemento);
 
@@ -74,6 +70,11 @@ public interface IElementoAB<T> {
      */
     public String inOrden();
 
+    /**
+     * Dada una lista, la carga con el resultado de inOrden.
+     * 
+     * @param Lista<T> una lista vacía.
+     */
     public void inOrden(Lista<T> unaLista);
 
     /**

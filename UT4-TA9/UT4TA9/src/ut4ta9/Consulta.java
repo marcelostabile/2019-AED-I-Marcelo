@@ -1,3 +1,6 @@
+/**
+ * CLASE Consulta.
+ */
 package ut4ta9;
 
 /**
@@ -67,9 +70,7 @@ public class Consulta implements IConsulta {
     /**
      * Resultado de la consulta.
      *
-     * 0 anotada, pendiente. 
-     * 1 concurrió. 
-     * 2 no concurrió.
+     * (0) agendada y pendiente.     (1) concurrió.     (2) no concurrió.
      */
     @Override
     public Integer getResultado() {
@@ -80,4 +81,5 @@ public class Consulta implements IConsulta {
     public void setResultado(Integer unResultado) {
         this.resultado = unResultado;
     }
+
 }

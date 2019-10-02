@@ -1,24 +1,21 @@
+/*
+ * CLASE TElementoAB.
+ */
 package ut4ta9;
 
-import java.util.LinkedList;
 
-/*
- * ELEMENTO
- */
 /**
  * @author EQUIPO.
  */
 class TElementoAB<T> implements IElementoAB<T> {
 
+    // Atributos.
     protected Comparable etiqueta;
     protected TElementoAB hijoIzq;
     protected TElementoAB hijoDer;
     protected T datos;
 
-    /**
-     * @param unaEtiqueta
-     * @param unosDatos
-     */
+    // Constructor.
     @SuppressWarnings("unchecked")
     public TElementoAB(Comparable unaEtiqueta, T unosDatos) {
         etiqueta = unaEtiqueta;
@@ -60,6 +57,50 @@ class TElementoAB<T> implements IElementoAB<T> {
     }
 
     /**
+     * INSERTAR UN ELEMENTO.
+     *
+     * @param unElemento
+     * @return boolean.
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public boolean insertar(TElementoAB<T> unElemento) {
+
+        /**
+         * Si el valor es menor que la etiqueta.
+         *    Si el hijoIzq está vacío, lo inserta allí, retorna true.
+         */
+        if (unElemento.getEtiqueta().compareTo(etiqueta) < 0) {
+            if (hijoIzq != null) {
+                return getHijoIzq().insertar(unElemento);
+            } else {
+                hijoIzq = unElemento;
+                return true;
+            }
+        } 
+        /**
+         * Si el valor es mayor que la etiqueta.
+         *    Si el hijoIzq está vacío, lo inserta allí, retorna true.
+         */
+        else if (unElemento.getEtiqueta().compareTo(etiqueta) > 0) {
+            if (hijoDer != null) {
+                return getHijoDer().insertar(unElemento);
+            } else {
+                hijoDer = unElemento;
+                return true;
+            }
+        } 
+        // Si ya existe el elemento con la misma etiqueta, devuelve false.
+        else {
+            return false;
+        }
+    }
+
+
+
+    
+    
+    /**
      * BUSCAR UN ELEMENTO en los hijos y sus subárboles.
      *
      * @return El elemento encontrado. Sino retorna null.
@@ -90,44 +131,6 @@ class TElementoAB<T> implements IElementoAB<T> {
         }
         // No lo encontró, retorna null.
         return null;
-    }
-
-    /**
-     * INSERTAR UN ELEMENTO.
-     *
-     * @param unElemento
-     * @return un booleano.
-     */
-    @SuppressWarnings("unchecked")
-    @Override
-    public boolean insertar(TElementoAB<T> unElemento) {
-
-        /**
-         * Selecciona el hijo izquierdo si el valor es menor. Si hijoIzq está
-         * vacío, lo inserta allí, retorna true.
-         */
-        if (unElemento.getEtiqueta().compareTo(etiqueta) < 0) {
-            if (hijoIzq != null) {
-                return getHijoIzq().insertar(unElemento);
-            } else {
-                hijoIzq = unElemento;
-                return true;
-            }
-        } /**
-         * Selecciona el hijo derecho si el valor es mayor. Si hijoIzq está
-         * vacío, lo inserta allí, retorna true.
-         */
-        else if (unElemento.getEtiqueta().compareTo(etiqueta) > 0) {
-            if (hijoDer != null) {
-                return getHijoDer().insertar(unElemento);
-            } else {
-                hijoDer = unElemento;
-                return true;
-            }
-        } // Si ya existe el elemento con la misma etiqueta, devuelve false.
-        else {
-            return false;
-        }
     }
 
     /**
