@@ -3,7 +3,7 @@ package ut4ta9;
 /**
  * @author EQUIPO 1
  */
-public class PadronAfiliados implements TPadronAfiliados {
+public class PadronAfiliados implements IPadronAfiliados {
 
     /**
      * Lista de afiliados al hospital.
