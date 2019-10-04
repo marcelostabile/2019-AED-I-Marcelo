@@ -4,7 +4,7 @@ package ut4ta9;
  *
  * @author bernardorychtenberg
  */
-public interface TPadronAfiliados {
+public interface IPadronAfiliados {
  
 //    /**
 //     * 
@@ -23,5 +23,5 @@ public interface TPadronAfiliados {
 //    ILista<IAfiliado> afiliadosPorEspecialidad(String especialidad);
     
  //   public void actualizarConsultas();
-public Lista<Afiliado> limpiar ();
+    public Lista<Afiliado> limpiar ();
 }

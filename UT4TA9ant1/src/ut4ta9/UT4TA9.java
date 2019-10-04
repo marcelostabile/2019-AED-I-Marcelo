@@ -73,7 +73,7 @@ public class UT4TA9 {
 
             // Si existe el afiliado, ingresar la consulta en la lista de consultas.
             if (nodoAfi != null) {
-                ILista<IConsulta> afiliadoConsultasAnotadas = nodoAfi.getDatos().getConsultasAnotadas();
+                ILista<IConsulta> afiliadoConsultasAnotadas = nodoAfi.getDatos().getConsultasAgendadas();
                 afiliadoConsultasAnotadas.insertar(nodoConsulta);
             }
         }
