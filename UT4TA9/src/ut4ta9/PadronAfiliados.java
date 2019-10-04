@@ -153,7 +153,7 @@ public class PadronAfiliados implements IPadronAfiliados {
         return arbolInactivos;
     }
 
-    // Adaptado del método de pedro
+    @Override
     public ILista<Afiliado> limpiar() {
         ILista<Afiliado> eliminados = new Lista();
         int contadorConsultas = 0;
@@ -180,6 +180,7 @@ public class PadronAfiliados implements IPadronAfiliados {
     }
 
     // Adaptado del método de pedro
+    @Override
     public ILista<Afiliado> limpiar2() {
         ILista<Afiliado> eliminados = new Lista();
         int contadorConsultas = 0;

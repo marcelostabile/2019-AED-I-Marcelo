@@ -21,4 +21,10 @@ public interface IPadronAfiliados {
      * Consulta que retorna los afiliados a una especialidad particular.
      */
     ILista<IAfiliado> afiliadosPorEspecialidad(String especialidad);
+    
+    
+    public ILista<Afiliado> limpiar();
+    
+    public ILista<Afiliado> limpiar2();
+    
 }
