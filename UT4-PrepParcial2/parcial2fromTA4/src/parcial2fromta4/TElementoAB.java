@@ -1,4 +1,4 @@
-package parcial2;
+package parcial2fromta4;
 
 /*
  * ELEMENTO

@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package parcial2;
+package parcial2fromta4;
 
 /**
  *
  * @author mstabile
  */
-public class Parcial2 {
+public class Parcial2fromTA4 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         /**
          * CREAR EL ÁRBOL.
          */
@@ -28,7 +28,7 @@ public class Parcial2 {
          */
         
         // Definir la carpeta de los archivos.
-        String workFolder = "src/parcial2/";
+        String workFolder = "src/parcial2fromTA4/";
         
         // Definir los archivos de trabajo.
         String arch1 = workFolder + "claves1.txt";
@@ -91,7 +91,7 @@ public class Parcial2 {
         System.out.println("Tamaño del árbol: " + arbol2.obtenerTamanio());
         System.out.println("Cantidad de hojas: " + arbol2.obtenerCantidadHojas());
         String nro2 = "192";
-        System.out.println("El elemento " + nro2 + " se encuentra en el nivel " + arbol1.obtenerNivel(nro2));
+        System.out.println("El elemento " + nro2 + " se encuentra en el nivel " + arbol2.obtenerNivel(nro2));
         System.out.println("");
         
         System.out.println("ÁRBOL 3");
@@ -100,7 +100,7 @@ public class Parcial2 {
         System.out.println("Tamaño del árbol: " + arbol3.obtenerTamanio());
         System.out.println("Cantidad de hojas: " + arbol3.obtenerCantidadHojas());
         String nro3 = "256";
-        System.out.println("El elemento " + nro3 + " se encuentra en el nivel " + arbol1.obtenerNivel(nro3));
+        System.out.println("El elemento " + nro3 + " se encuentra en el nivel " + arbol3.obtenerNivel(nro3));
         System.out.println("");
         
     }

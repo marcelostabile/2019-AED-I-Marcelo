@@ -1,7 +1,7 @@
 /*
  * MANEJADOR GENÉRICO DE ARCHIVOS 2019.
  */
-package parcial2;
+package parcial2fromta4;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
