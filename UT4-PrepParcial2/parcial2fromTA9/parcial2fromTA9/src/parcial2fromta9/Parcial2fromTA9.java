@@ -1,8 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ * MAIN.
+*/
 package parcial2fromta9;
 
 /**
@@ -17,48 +15,52 @@ public class Parcial2fromTA9 {
     public static void main(String[] args) {
 
         /**
-         * 1 Instanciar un padrón de afiliados 2 Cargar los afiliados 3 Cargar
-         * las consultas a realizar e históricas de los afiliados 4 Aplicar el
-         * método a desarrollar (actualizarConsultas) 5 Imprimir por pantalla la
-         * lista devuelta en el método anterior
-         */
-        /**
-         * Instanciamos el hospital.
-         */
-        PadronAfiliados padronAfiliados = new PadronAfiliados();
-
-        /**
-         * CARPETA DE LOS ARCHIVOS.
+         * MANEJADOR DE ARCHIVOS.
          */
         IManejadorArchivosGenerico ManejadorArchivos = new ManejadorArchivosGenerico();
         
+        /**
+         * CARGAR PADRÓN DE AFILIADOS.
+         */
+        PadronAfiliados padronAfiliados = new PadronAfiliados();
+        
+        // Carpeta de trabajo.
         String CarpetaDeTrabajo = "src/parcial2fromTA9/";
 
+        String arch1 = "padron.txt";
+        String arch2 = "agendadas.txt";
+        String arch3 = "historicas.txt";
+        
+        String archSalida1 = "salida.txt";
+        
         /**
-         * Cargar lista de afiliados.
-         *
+         * PADRON DE AFILIADOS.
+         * 
          * Separamos los campos. Creamos un afiliado a partir de cada linea:
          * cédula, nombre, apellido. Crear nodo e insertarlo en la lista.
          */
-        String[] lineasPadron = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + "padron.txt");
+        String[] lineasArchivo1 = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + arch1);
 
-        for (String linea : lineasPadron) {
+        for (String linea : lineasArchivo1) {
 
             String[] c = linea.split(",");
+            
             IAfiliado afiliadoNuevo = new Afiliado(Integer.parseInt(c[0]), c[1], c[2]);
+            
             IElementoAB<IAfiliado> elementoAfiNuevo = new TElementoAB(afiliadoNuevo.getCedula(), afiliadoNuevo);
+            
             padronAfiliados.insertar(elementoAfiNuevo);
         }
 
         /**
-         * Cargar listas de consultas agendadas.
+         * CONSULTAS AGENDADAS.
          */
-        String[] lineasAgendadas = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + "agendadas.txt");
+        String[] lineasArchivo2 = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + arch2);
 
         // Etiqueta del nodo de consulta.
         int id1 = 0;
 
-        for (String linea : lineasAgendadas) {
+        for (String linea : lineasArchivo2) {
 
             String[] c = linea.split(",");
             int afiliadoCI = Integer.parseInt(c[0]);
@@ -73,20 +75,21 @@ public class Parcial2fromTA9 {
 
             if (elementoAfi != null) {
                 ILista<IConsulta> afiliadoConsultasAnotadas = elementoAfi.getDatos().getConsultasAnotadas();
+                
                 // Insertar en lista de consultas del afiliado
                 afiliadoConsultasAnotadas.insertar(nodoConsulta);
             }
         }
 
         /**
-         * Cargar listas de consultas históricas.
+         * CONSULTAS HISTÓRICAS.
          */
-        String[] lineasHisto = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + "historicas.txt");
+        String[] lineasArchivo3 = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + arch3);
 
         // Etiqueta del nodo de consulta.
         int id2 = 0;
 
-        for (String linea : lineasHisto) {
+        for (String linea : lineasArchivo3) {
 
             String[] c = linea.split(",");
 
@@ -109,7 +112,7 @@ public class Parcial2fromTA9 {
         }
 
         /**
-         * Imprimir estadisticas iniciales.
+         * ESTADÍSTICAS INICIALES.
          */
         System.out.println("\nESTADÍSTICAS INICIALES\n");
         System.out.println("Cantidad de afiliados: " + padronAfiliados.cantidadAfiliados());
@@ -122,51 +125,62 @@ public class Parcial2fromTA9 {
          */
         padronAfiliados.actualizarConsultas();
         System.out.println("");
-        System.out.println("Se actualizaron las consultas de los afiliados.");
+        System.out.println("SE ACTUALIZARON LAS CONSULTAS!");
 
         /**
-         * Imprimir estadisticas actualizadas.
+         * ESTADÍSTICAS ACTUALIZADAS.
          */
-        System.out.println("\nESTADÍSTICAS LUEGO DE LA ACTUALIZACIÓN\n");
+        System.out.println("\nESTADÍSTICAS LUEGO DE ACTUALIZAR CONSULTAS\n");
         System.out.println("Cantidad de afiliados: " + padronAfiliados.cantidadAfiliados());
         System.out.println("Cant. Consultas Agendadas: " + padronAfiliados.cantidadConsultasAgendadas());
         System.out.println("Cant. Consultas Históricas: " + padronAfiliados.cantidadConsultasHistoricas());
         System.out.println("Total de Consultas: " + padronAfiliados.totalConsultas());
         System.out.println("");
 
-        System.out.println("ÁRBOL DE AFILIADOS DEUDORES inOrden \n");
+        System.out.println("ÁRBOL DE AFILIADOS DEUDORES inOrden\n");
         TArbolBB<Afiliado> listadoContaduria = padronAfiliados.listadoContaduria();
         System.out.println(listadoContaduria.inOrden());
-        System.out.println("");
-        System.out.println("\nLista deudores\n");
 
+        System.out.println("\nLISTA DE DEUDORES\n");
         padronAfiliados.getListaDeudores().imprimir();
-        System.out.println(""
-                + "");
-        System.out.println("ÁRBOL DE AFILIADOS INACTIVOS inOrden \n");
+
+        System.out.println("\nÁRBOL DE AFILIADOS INACTIVOS inOrden \n");
         TArbolBB<Afiliado> listadoInactivos = padronAfiliados.listadoInactivos();
         System.out.println(listadoInactivos.inOrden());
-        System.out.println("");
 
-        // escribir en un archivo
+        /**
+         * ESCRIBIR EN UN ARCHIVO LA LISTA DE INACTIVOS
+         */
+        
+        // Tomo el primer nodo de la lista de inactivo.
         INodo<IAfiliado> nodoActual = padronAfiliados.getListaInactivos().getPrimero();
+        
+        // Recorro la lista de afiliados inactivos y la voy escribiendo en el archivo.
         IAfiliado afiliadoActual = nodoActual.getDato();
-        while (nodoActual != null) {
-            if (afiliadoActual != null) {
+        
+        while (nodoActual != null) { 
+            
+            if (afiliadoActual != null) { 
+                
                 afiliadoActual = nodoActual.getDato();
+                
                 String[] arregloLineas = new String[1];
+                
                 arregloLineas[0] = afiliadoActual.toString();
-                ManejadorArchivos.escribirArchivo(CarpetaDeTrabajo + "salida.txt", arregloLineas);
+                
+                ManejadorArchivos.escribirArchivo(CarpetaDeTrabajo + archSalida1, arregloLineas);
             }
             nodoActual = nodoActual.getSiguiente();
         }
 
         /**
-         * Imprimir estadisticas finales.
+         * IMPRIMIR ESTADÍSTICAS FINALES.
          */
         System.out.println("\nESTADISTICAS FINALES");
+        
         System.out.println("\nEjecuto limpiar...");
         padronAfiliados.limpiar();
+        
         System.out.println("Cantidad de afiliados: " + padronAfiliados.cantidadAfiliados());
         System.out.println("Cant. Consultas Agendadas: " + padronAfiliados.cantidadConsultasAgendadas());
         System.out.println("Cant. Consultas Históricas: " + padronAfiliados.cantidadConsultasHistoricas());
