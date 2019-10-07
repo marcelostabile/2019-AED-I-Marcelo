@@ -1,8 +1,0 @@
-
-CLASE AFILIADO
-
-Terminar los m�todos de actualizarconsultas.
-
-CLASE ARBOL + CLASE ELEMENTO
-
-Clase eliminarElemento devolviendo el elemento eliminado.
