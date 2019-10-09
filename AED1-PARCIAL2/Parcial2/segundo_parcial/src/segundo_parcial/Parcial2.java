@@ -49,6 +49,10 @@ public class Parcial2 {
             listaAfiliados.insertar(nodoNuevo);
         }
         
+        // probando.
+        System.out.println(listaAfiliados.cantElementos());
+        
+        
         /**
          * CARGAR CONSULTAS.
          */
@@ -77,43 +81,49 @@ public class Parcial2 {
             }
         }
         
-        /**
-         * CARGAR CONSULTAS.
-         */
-        String[] lineasHisto = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + "historicas.txt");
-
-        // Etiqueta del nodo de consulta.
-//        int id2 = 0;
+        // probando.
         
-        for (String linea : lineasHisto) {
-            
-            String[] c = linea.split(",");
-            String afiCI = c[0];
-            String fecha = c[1];
-            int medicoCI = Integer.parseInt(c[3]);
-            int resultadoId = Integer.parseInt(c[4]);
-            Consulta conAux = new Consulta(afiCI, fecha, medicoCI, resultadoId);
-
-//            INodo<Consulta> nodoConsulta = new Nodo(id1, conAux);
-//            id1 += 1;
-
-            // Buscar afiliado en el padron cargado.
-            INodo<Afiliado> nodoAfi = listaAfiliados.buscar(afiCI);
-            
-            if (nodoAfi != null) { 
-                nodoAfi.getDato().cargarConsultaHistorica(conAux);
-            }
-        }
         
-        /**
-         * CARGAR PADRON
-         */
-         padronAfiliados.cargarDesdeLista(listaAfiliados);
-         
-         /**
-          * IMPRIMIR INORDEN
-          */
-         
+        
+        
+//        
+//        /**
+//         * CARGAR CONSULTAS.
+//         */
+//        String[] lineasHisto = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + "historicas.txt");
+//
+//        // Etiqueta del nodo de consulta.
+////        int id2 = 0;
+//        
+//        for (String linea : lineasHisto) {
+//            
+//            String[] c = linea.split(",");
+//            String afiCI = c[0];
+//            String fecha = c[1];
+//            int medicoCI = Integer.parseInt(c[3]);
+//            int resultadoId = Integer.parseInt(c[4]);
+//            Consulta conAux = new Consulta(afiCI, fecha, medicoCI, resultadoId);
+//
+////            INodo<Consulta> nodoConsulta = new Nodo(id1, conAux);
+////            id1 += 1;
+//
+//            // Buscar afiliado en el padron cargado.
+//            INodo<Afiliado> nodoAfi = listaAfiliados.buscar(afiCI);
+//            
+//            if (nodoAfi != null) { 
+//                nodoAfi.getDato().cargarConsultaHistorica(conAux);
+//            }
+//        }
+//        
+//        /**
+//         * CARGAR PADRON
+//         */
+//         padronAfiliados.cargarDesdeLista(listaAfiliados);
+//         
+//         /**
+//          * IMPRIMIR INORDEN
+//          */
+//         
          
          
     }
