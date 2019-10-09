@@ -23,6 +23,11 @@ public class Parcial2 {
         // 5) Obtener la cantidad de consultas en el día e imprimirla por pantalla.
         
         /**
+         * CARPETA DE ARCHIVOS.
+         */
+        String CarpetaDeTrabajo = "src/segundo_parcial/";
+
+        /**
          * PADRON AFILIADOS.
          */
         TArbolPadronAfiliados padronAfiliados = new TArbolPadronAfiliados();
@@ -31,8 +36,6 @@ public class Parcial2 {
          * LISTA DE AFILIADOS.
          */
         Lista<Afiliado> listaAfiliados = new Lista<>();
-
-        String CarpetaDeTrabajo = "src/segundo_parcial/";
 
         IManejadorArchivosGenerico ManejadorArchivos = new ManejadorArchivosGenerico();
         
@@ -52,37 +55,77 @@ public class Parcial2 {
         // probando.
         System.out.println(listaAfiliados.cantElementos());
         
-        
         /**
-         * CARGAR CONSULTAS.
+         * CARGAR CONSULTAS AGENDADAS.
          */
         String[] lineasAgendadas = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + "agendadas.txt");
-
-        // Etiqueta del nodo de consulta.
-        int id1 = 0;
         
         for (String linea : lineasAgendadas) {
             
             String[] c = linea.split(",");
-            String afiCI = c[0];
+            
+            // CI
+            String afiliadoCI = c[0];
+            // Fecha
             String fecha = c[1];
+            // Especialidad
+            String especialidad = c[2];
+            // Médico
             int medicoCI = Integer.parseInt(c[3]);
+            // Resultado
             int resultadoId = Integer.parseInt(c[4]);
-            Consulta conAux = new Consulta(afiCI, fecha, medicoCI, resultadoId);
-
-//            INodo<Consulta> nodoConsulta = new Nodo(id1, conAux);
-//            id1 += 1;
+            
+            Consulta conAux = new Consulta(fecha, especialidad, medicoCI, resultadoId);
 
             // Buscar afiliado en el padron cargado.
-            Nodo<Afiliado> nodoAfi = listaAfiliados.buscar(afiCI);
+            Nodo<Afiliado> nodoAfiliado = listaAfiliados.buscar(afiliadoCI);
             
-            if (nodoAfi != null) { 
-                nodoAfi.getDato().cargarConsultaPendiente(conAux);
+            if (nodoAfiliado != null) { 
+                nodoAfiliado.getDato().cargarConsultaPendiente(conAux);
+            }
+        }
+
+        /**
+         * CARGAR CONSULTAS HISTÓRICAS.
+         */
+        String[] lineasHisto = ManejadorArchivos.leerArchivo(CarpetaDeTrabajo + "historicas.txt");
+        
+        for (String linea : lineasHisto) {
+            
+            String[] c = linea.split(",");
+            
+            // CI
+            String afiliadoCI = c[0];
+            // Fecha
+            String fecha = c[1];
+            // Especialidad
+            String especialidad = c[2];
+            // Médico
+            int medicoCI = Integer.parseInt(c[3]);
+            // Resultado
+            int resultadoId = Integer.parseInt(c[4]);
+            
+            Consulta conAux = new Consulta(fecha, especialidad, medicoCI, resultadoId);
+
+            // Buscar afiliado en el padron cargado.
+            Nodo<Afiliado> nodoAfiliado = listaAfiliados.buscar(afiliadoCI);
+            
+            if (nodoAfiliado != null) { 
+                nodoAfiliado.getDato().cargarConsultaHistorica(conAux);
             }
         }
         
-        // probando.
+        // probando con afiliado 974192.
+        Afiliado afiliadoAux = padronAfiliados.buscar(974192).getDatos();
         
+        Nodo<Consulta> consulta = afiliadoAux.pendientes.getPrimero();
+        
+        while (consulta != null) {
+            
+            System.out.println("Consulta: " + consulta.getDato().getFecha() + "Res: "+ consulta.getDato().getResultado());
+            
+            consulta = consulta.getSiguiente();
+        }
         
         
         
