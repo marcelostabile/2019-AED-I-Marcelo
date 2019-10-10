@@ -45,38 +45,54 @@ public class TArbolPadronAfiliados extends TArbolBB<Afiliado> implements IArbolP
         // Árbol de resultado.
         TArbolBB<Afiliado> arbolResultado = new TArbolBB<>();
         
-        // Creo una lista de los afiliados. La recorro para obtener las consultas de cada uno.
-        //TArbolPadronAfiliados elPadron = new TArbolPadronAfiliados();
-        
+        // Lista de afiliados a partir del árbol actual.
         Lista<Afiliado> listaAfiliados = this.inorden();
-        
+
+        /**
+         * DEPURANDO
+         */
+        System.out.println(listaAfiliados.cantElementos());
+        listaAfiliados.buscar(954277).getDato().pendientes.cantElementos();
+        /**
+         * DEPURANDO FIN.
+         */
+                
+        // Si la lista no está vacía, comienzo a recorrer la lista de afiliados.
         if (listaAfiliados != null) { 
             
             // Nodo del afiliado.
             Nodo<Afiliado> nodoAfiliado = listaAfiliados.getPrimero();
-            
             while (nodoAfiliado != null) {
                 
                 // Obtengo el afiliado.
                 Afiliado afiliadoAux = nodoAfiliado.getDato();
                 
+                /**
+                 * DEPURANDO
+                 */
+                System.out.println("Afiliado: " + afiliadoAux.getCedula());
+                afiliadoAux.pendientes.cantElementos();
+                /**
+                 * DEPURANDO FIN.
+                 */
+                
+                // Verifico que el afiliado tiene consultas agendadas.
                 if ( !afiliadoAux.pendientes.esVacia()) {
                 
                     // Obtengo sus consultas pendientes.
                     Nodo<Consulta> nodoConsulta = afiliadoAux.pendientes.getPrimero();
-                    
                     while (nodoConsulta != null) {
                     
                         // Obtengo la consulta.
                         Consulta consultaAux = nodoConsulta.getDato();
 
                         // Si la consulta tiene el mismo día. Creo el elemento Afiliado y lo inserto en el árbol.
-                        String fechaConsulta = consultaAux.getFecha();
+                        //String fechaConsulta = consultaAux.getFecha();
 
-                        if (fechaConsulta.equals(fecha)) {
+                        if (consultaAux.getFecha().equals(fecha)) {
 
-                            TElementoAB<Afiliado> unElemento = new TElementoAB(afiliadoAux.getCedula(), afiliadoAux);
-                            arbolResultado.insertar(unElemento);
+                            TElementoAB<Afiliado> afiAux = new TElementoAB(afiliadoAux.getCedula(), afiliadoAux);
+                            arbolResultado.insertar(afiAux);
                         }
                         
                         // siguiente.

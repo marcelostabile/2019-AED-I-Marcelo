@@ -120,7 +120,8 @@ public class Parcial2 {
         TArbolPadronAfiliados arbolAfiliados = elPadron.cargarDesdeLista(listaAfiliados);
         
         // probando con afiliado 974192.
-        System.out.println(arbolAfiliados.buscar(974192).getDatos().getNombre());
+        System.out.println(arbolAfiliados.buscar(954277).getDatos().getNombre());
+        System.out.println(arbolAfiliados.buscar(954277).getDatos().pendientes.cantElementos());
 
 // (3.1)
         /**
@@ -130,9 +131,9 @@ public class Parcial2 {
         
 // (4)
         // Creo un árbol para los afiliados con consultas del día.
-        TArbolBB<Afiliado> arbolConsultasDelDia = arbolAfiliados.obtenerConsultasDelDia("20191008");
+        TArbolBB<Afiliado> consultasDelDia = arbolAfiliados.obtenerConsultasDelDia("20191008");
         
-        System.out.println(arbolConsultasDelDia.inOrden());
+        System.out.println(consultasDelDia.inOrden());
         
         
     }
