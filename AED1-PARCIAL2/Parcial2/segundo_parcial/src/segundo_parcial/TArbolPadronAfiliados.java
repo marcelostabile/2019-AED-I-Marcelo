@@ -18,14 +18,24 @@ public class TArbolPadronAfiliados extends TArbolBB<Afiliado> implements IArbolP
         // Acá se debe implementar el método 1 del parcial. 
         TArbolBB<Afiliado> arbolResultado = new TArbolBB<>();
         
-        Nodo afiliadoNuevo = listaAfiliados.getPrimero();
+        // Consigo el nodo del afiliado a partir de la lista.
+        Nodo<Afiliado> afiliadoNuevo = listaAfiliados.getPrimero();
         
         while (afiliadoNuevo != null) {
+
+            // Consigo afiliado a partir del nodo.
+            Afiliado afiliadoAux = afiliadoNuevo.getDato();
+
+            // Crear TElementoAB a partir del afiliado.
+            TElementoAB<Afiliado> elementoNuevo = new TElementoAB(afiliadoAux.getCedula(), afiliadoAux);
+
+            // Insertar el elemento afiliado en el árbol resultado.
+            arbolResultado.insertar(elementoNuevo);
             
-            TElementoAB<Afiliado> afiNuevo = new TElementoAB(afiliadoNuevo.getEtiqueta(), afiliadoNuevo);
-            
-            arbolResultado.insertar(afiNuevo);
+            // Siguiente afiliado.
+            afiliadoNuevo = afiliadoNuevo.getSiguiente();
         }
+        // Devolver resultado.
         return arbolResultado;
     }
     
