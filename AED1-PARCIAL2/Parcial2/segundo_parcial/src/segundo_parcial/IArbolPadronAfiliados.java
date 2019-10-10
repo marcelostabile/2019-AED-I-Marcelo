@@ -13,8 +13,8 @@ package segundo_parcial;
 public interface IArbolPadronAfiliados {
 
     
+    public TArbolPadronAfiliados cargarDesdeLista(Lista<Afiliado> listaAfiliados);
     public TArbolBB<Afiliado> obtenerConsultasDelDia(String fecha);
-    public TArbolBB<Afiliado> cargarDesdeLista(Lista<Afiliado> listaAfiliados);
     public Integer cantidadConsultasdelDia();
     
 }

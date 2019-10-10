@@ -13,10 +13,10 @@ package segundo_parcial;
 public class TArbolPadronAfiliados extends TArbolBB<Afiliado> implements IArbolPadronAfiliados {
 
     @Override
-    public TArbolBB<Afiliado> cargarDesdeLista(Lista<Afiliado> listaAfiliados) {
+    public TArbolPadronAfiliados cargarDesdeLista(Lista<Afiliado> listaAfiliados) {
         
         // Acá se debe implementar el método 1 del parcial. 
-        TArbolBB<Afiliado> arbolResultado = new TArbolBB<>();
+        TArbolPadronAfiliados arbolResultado = new TArbolPadronAfiliados();
         
         // Consigo el nodo del afiliado a partir de la lista.
         Nodo<Afiliado> afiliadoNuevo = listaAfiliados.getPrimero();
@@ -42,16 +42,51 @@ public class TArbolPadronAfiliados extends TArbolBB<Afiliado> implements IArbolP
     @Override
     public TArbolBB<Afiliado> obtenerConsultasDelDia(String fecha) { 
         
+        // Árbol de resultado.
         TArbolBB<Afiliado> arbolResultado = new TArbolBB<>();
         
-        TArbolPadronAfiliados padronAfiliados = new TArbolPadronAfiliados();
+        // Creo una lista de los afiliados. La recorro para obtener las consultas de cada uno.
+        //TArbolPadronAfiliados elPadron = new TArbolPadronAfiliados();
         
-        TElementoAB<Afiliado> afiliado = padronAfiliados.getRaiz();
+        Lista<Afiliado> listaAfiliados = this.inorden();
         
-
-        
-        
-        
+        if (listaAfiliados != null) { 
+            
+            // Nodo del afiliado.
+            Nodo<Afiliado> nodoAfiliado = listaAfiliados.getPrimero();
+            
+            while (nodoAfiliado != null) {
+                
+                // Obtengo el afiliado.
+                Afiliado afiliadoAux = nodoAfiliado.getDato();
+                
+                System.out.println(nodoAfiliado.getDato().getCedula());
+                
+                // Obtengo sus consultas pendientes.
+                Nodo<Consulta> nodoConsulta = afiliadoAux.pendientes.getPrimero();
+                
+                System.out.println(nodoConsulta.getEtiqueta());
+                
+                while (nodoConsulta != null) {
+                    
+                    // Obtengo la consulta.
+                    Consulta consultaAux = nodoConsulta.getDato();
+                    
+                    // Si la consulta tiene el mismo día. Creo el elemento Afiliado y lo inserto en el árbol.
+                    String fechaConsulta = consultaAux.getFecha();
+                    
+                    if (fechaConsulta.equals(fecha)) {
+                        
+                        TElementoAB<Afiliado> unElemento = new TElementoAB(afiliadoAux.getCedula(), afiliadoAux);
+                        arbolResultado.insertar(unElemento);
+                    }
+                    // siguiente.
+                    nodoConsulta = nodoConsulta.getSiguiente();
+                }
+                // Siguiente afiliado.
+                nodoAfiliado = nodoAfiliado.getSiguiente();
+            }
+        }
         return arbolResultado;
     }
     

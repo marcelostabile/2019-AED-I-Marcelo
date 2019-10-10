@@ -16,12 +16,13 @@ public class Parcial2 {
         // 1) Instanciar y cargar los afiliados a una lista de afiliados desde padron.txt. 
         // 2) Instanciar y cargar las consultas a partir de los archivos historicos.txt y agendadas.txt
         // 3) Aplicar el método de carga de afiliados a partir de una lista (invocando el método cargarDesdeLista)
-        
         // 3.1) Imprimir por pantalla la recorrida in orden del árbol resultante. 
         // 4) Aplicar el método obtenerConsultasDelDia para obtener las consultas del día de la fecha. 
         // 4.1) Descargar a un archivo el resultado de la recorrida del árbol resultante in orden.
         // 5) Obtener la cantidad de consultas en el día e imprimirla por pantalla.
         
+// (1)
+
         /**
          * MANEJADOR DE ARCHIVOS.
          */
@@ -49,8 +50,10 @@ public class Parcial2 {
         }
         
         // probando.
-        System.out.println(listaAfiliados.cantElementos());
-        
+        System.out.println("Lista de afiliados: " + listaAfiliados.cantElementos());
+
+// (2)
+
         /**
          * CARGAR CONSULTAS AGENDADAS.
          */
@@ -109,17 +112,39 @@ public class Parcial2 {
             }
         }
 
+// (3)
+
         /**
          * ÁRBOL PARA EL PADRON AFILIADOS.
          */
-        TArbolPadronAfiliados padronAfiliados = new TArbolPadronAfiliados();
+        TArbolPadronAfiliados elPadron = new TArbolPadronAfiliados();
+
+        // probando
+        System.out.println("El padrón está vacío: " + elPadron.esVacio());
 
         // Cargar el árbol a partir de la lista de afiliados.
-        padronAfiliados.cargarDesdeLista(listaAfiliados);
+        elPadron = elPadron.cargarDesdeLista(listaAfiliados);
         
-        
+        // probando
+        System.out.println("El padrón está vacío: " + elPadron.esVacio());
+
         // probando con afiliado 974192.
-        // System.out.println(padronAfiliados.buscar(974192).getDatos().getNombre());
+        System.out.println(elPadron.buscar(974192).getDatos().getNombre());
+
+// (3.1)
+
+        /**
+         * IMPRIMIR LA RECORRIDA EN INORDEN.
+         */
+        System.out.println(elPadron.inOrden());
+        
+// (4)
+
+        // Creo un árbol para los afiliados con consultas del día.
+        TArbolBB<Afiliado> arbolConsultasDelDia = elPadron.obtenerConsultasDelDia("20191009");
+        
+        System.out.println(arbolConsultasDelDia.esVacio());
+
         
     }
 }
