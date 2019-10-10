@@ -22,7 +22,6 @@ public class Parcial2 {
         // 5) Obtener la cantidad de consultas en el día e imprimirla por pantalla.
         
 // (1)
-
         /**
          * MANEJADOR DE ARCHIVOS.
          */
@@ -53,7 +52,6 @@ public class Parcial2 {
         System.out.println("Lista de afiliados: " + listaAfiliados.cantElementos());
 
 // (2)
-
         /**
          * CARGAR CONSULTAS AGENDADAS.
          */
@@ -113,38 +111,29 @@ public class Parcial2 {
         }
 
 // (3)
-
         /**
          * ÁRBOL PARA EL PADRON AFILIADOS.
          */
         TArbolPadronAfiliados elPadron = new TArbolPadronAfiliados();
 
-        // probando
-        System.out.println("El padrón está vacío: " + elPadron.esVacio());
-
         // Cargar el árbol a partir de la lista de afiliados.
-        elPadron = elPadron.cargarDesdeLista(listaAfiliados);
+        TArbolPadronAfiliados arbolAfiliados = elPadron.cargarDesdeLista(listaAfiliados);
         
-        // probando
-        System.out.println("El padrón está vacío: " + elPadron.esVacio());
-
         // probando con afiliado 974192.
-        System.out.println(elPadron.buscar(974192).getDatos().getNombre());
+        System.out.println(arbolAfiliados.buscar(974192).getDatos().getNombre());
 
 // (3.1)
-
         /**
          * IMPRIMIR LA RECORRIDA EN INORDEN.
          */
-        System.out.println(elPadron.inOrden());
+        System.out.println(arbolAfiliados.inOrden());
         
 // (4)
-
         // Creo un árbol para los afiliados con consultas del día.
-        TArbolBB<Afiliado> arbolConsultasDelDia = elPadron.obtenerConsultasDelDia("20191009");
+        TArbolBB<Afiliado> arbolConsultasDelDia = arbolAfiliados.obtenerConsultasDelDia("20191008");
         
-        System.out.println(arbolConsultasDelDia.esVacio());
-
+        System.out.println(arbolConsultasDelDia.inOrden());
+        
         
     }
 }
