@@ -60,28 +60,28 @@ public class TArbolPadronAfiliados extends TArbolBB<Afiliado> implements IArbolP
                 // Obtengo el afiliado.
                 Afiliado afiliadoAux = nodoAfiliado.getDato();
                 
-                System.out.println(nodoAfiliado.getDato().getCedula());
+                if ( !afiliadoAux.pendientes.esVacia()) {
                 
-                // Obtengo sus consultas pendientes.
-                Nodo<Consulta> nodoConsulta = afiliadoAux.pendientes.getPrimero();
-                
-                System.out.println(nodoConsulta.getEtiqueta());
-                
-                while (nodoConsulta != null) {
+                    // Obtengo sus consultas pendientes.
+                    Nodo<Consulta> nodoConsulta = afiliadoAux.pendientes.getPrimero();
                     
-                    // Obtengo la consulta.
-                    Consulta consultaAux = nodoConsulta.getDato();
+                    while (nodoConsulta != null) {
                     
-                    // Si la consulta tiene el mismo día. Creo el elemento Afiliado y lo inserto en el árbol.
-                    String fechaConsulta = consultaAux.getFecha();
-                    
-                    if (fechaConsulta.equals(fecha)) {
+                        // Obtengo la consulta.
+                        Consulta consultaAux = nodoConsulta.getDato();
+
+                        // Si la consulta tiene el mismo día. Creo el elemento Afiliado y lo inserto en el árbol.
+                        String fechaConsulta = consultaAux.getFecha();
+
+                        if (fechaConsulta.equals(fecha)) {
+
+                            TElementoAB<Afiliado> unElemento = new TElementoAB(afiliadoAux.getCedula(), afiliadoAux);
+                            arbolResultado.insertar(unElemento);
+                        }
                         
-                        TElementoAB<Afiliado> unElemento = new TElementoAB(afiliadoAux.getCedula(), afiliadoAux);
-                        arbolResultado.insertar(unElemento);
+                        // siguiente.
+                        nodoConsulta = nodoConsulta.getSiguiente();
                     }
-                    // siguiente.
-                    nodoConsulta = nodoConsulta.getSiguiente();
                 }
                 // Siguiente afiliado.
                 nodoAfiliado = nodoAfiliado.getSiguiente();
