@@ -93,9 +93,17 @@ public class TArbolPadronAfiliados extends TArbolBB<Afiliado> implements IArbolP
     @Override
     public Integer cantidadConsultasdelDia(){
         // Acá se debe implementar el método 3 del parcial. 
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        // Fecha de hoy. 
+        String fechaActual = "20191008";   // Fecha harcodeada!!!
+        
+        // Obtengo los afiliados con consultas de hoy y los transformo en lista para usar el método cantElementos().
+        TArbolBB<Afiliado> consultasDelDia = this.obtenerConsultasDelDia(fechaActual);
+        
+        Lista<Afiliado> listaAfiliadosConConsulta = consultasDelDia.inorden();
+        
+        return listaAfiliadosConConsulta.cantElementos();
     }
-    
 } 
     
 

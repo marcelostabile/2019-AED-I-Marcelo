@@ -128,8 +128,29 @@ public class Parcial2 {
          * 4.1) Descargar a un archivo el resultado de la recorrida del árbol resultante in orden.
          * 
          */
+
+        // Cargo la lista con los elementos del recorrido en inorden.
+        Lista<Afiliado> listaDescarga = consultasDelDia.inorden();
         
+        // Tomo el primer nodo de la lista. Recorro la lista y la voy escribiendo en el archivo.
+        Nodo<Afiliado> nodoActual = listaDescarga.getPrimero();
+        
+        while (nodoActual != null) { 
 
+            String[] arregloLineas = new String[1];
 
+            arregloLineas[0] =  Integer.toString(nodoActual.getDato().getCedula());
+                
+            ManejadorArchivos.escribirArchivo(CarpetaDeTrabajo + "AfiliadosConsultasDelDia.txt", arregloLineas);
+
+            nodoActual = nodoActual.getSiguiente();
+        }
+        
+        /**
+         * 5) Obtener la cantidad de consultas en el día e imprimirla por pantalla.
+         * 
+         */
+        System.out.println("Cantidad de consultas del día: " + arbolAfiliados.cantidadConsultasdelDia());
+        
     }
 }
