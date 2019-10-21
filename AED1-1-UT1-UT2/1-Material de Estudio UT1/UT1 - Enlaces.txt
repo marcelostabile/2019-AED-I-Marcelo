@@ -1,0 +1,55 @@
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Learning the Java Language
+
+https://docs.oracle.com/javase/tutorial/java/index.html
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Language Basics
+
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Classes and Objects
+
+https://docs.oracle.com/javase/tutorial/java/javaOO/index.html
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Numbers and Strings
+
+https://docs.oracle.com/javase/tutorial/java/data/index.html
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+The Java Tutorial - Oracle 
+
+http://docs.oracle.com/javase/tutorial/java/index.html 
+
+Clases y objetos:
+
+http://docs.oracle.com/javase/tutorial/java/javaOO/index.html (leer solo categorías Classes, Objects y More on Classes) 
+
+Strings: 
+
+http://docs.oracle.com/javase/tutorial/java/data/strings.html 
+
+Characters: 
+
+http://docs.oracle.com/javase/tutorial/java/data/characters.html 
+
+Numbers: 
+
+http://docs.oracle.com/javase/tutorial/java/data/numbers.html 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Curso Udacity:
+
+https://www.udacity.com/course/cs046
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+

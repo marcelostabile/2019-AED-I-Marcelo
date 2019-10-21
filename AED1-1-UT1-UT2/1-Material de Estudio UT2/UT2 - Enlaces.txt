@@ -1,0 +1,69 @@
+
+Web
+
+The Java Tutorial - Oracle http://docs.oracle.com/javase/tutorial/java/index.html
+
+Clases y objetos : http://docs.oracle.com/javase/tutorial/java/javaOO/index.html (leer solo categorías Classes, Objects y More on Classes)
+
+Strings: http://docs.oracle.com/javase/tutorial/java/data/strings.html
+
+Characters: http://docs.oracle.com/javase/tutorial/java/data/characters.html
+
+Numbers: http://docs.oracle.com/javase/tutorial/java/data/numbers.html
+
+
+
+Java Debugging with NetBeans - Tutorial:
+
+https://www.youtube.com/watch?v=ReLlcbi1es4
+
+
+
+JUnit
+
+Ejemplo de JUnit para hacer pruebas unitarias (4:19 min) 
+https://webasignatura.ucu.edu.uy/%20http:/www.youtube.com/watch?v=oKbngr1DMDw
+
+
+JUnit tutorial:
+https://www.vogella.com/articles/JUnit/article.html
+
+
+Tutorial Junit en Netbeans
+Serie de videos tutoriales de JUnit (total aprox. 11 minutos):
+
+Intro to jUnit 1 of 3: https://www.youtube.com/watch?v=KwYWPK6m7oY&feature=player_detailpage
+
+Intro to jUnit 2 of 3: https://www.youtube.com/watch?feature=player_detailpage&v=I2aQlEsmAlY
+
+Intro to jUnit 3 of 3: https://www.youtube.com/watch?v=quTuT9fPWpY&feature=player_detailpage
+
+
+JavaDoc
+
+Intro to JavaDoc - 1 of 2 (9 mins): http://www.youtube.com/watch?v=CJxMwbJPisw
+
+Intro to JavaDoc - 2 of 2 (2 mins) : http://www.youtube.com/watch?v=Ls-NHebXY20
+
+Otro, en español (9 mins):
+
+https://www.youtube.com/watch?v=cHmT4cK2eDw&index=13&list=PL9plr8eVmUFEvbCX-l0vyNyPdES1ys5Rp
+
+Referencia Oracle :
+
+http://docs.oracle.com/javase/7/docs/technotes/tools/solaris/javadoc.html
+
+
+Lectura complementaria
+
+Tutorial en http://codigofacilito.com/cursos/JAVA (en Español)
+
+1.Arreglos: http://www.youtube.com/watch?feature=player_detailpage&v=mEvjuG_tbqY
+
+2.Matrices - Arreglos Bidimensionales: http://www.youtube.com/watch?feature=player_detailpage&v=SMIyVS3k848
+
+3.Variables de texto en Java: http://codigofacilito.com/videos/variables_de_texto_en_java
+
+4.Leer textos en Java: http://codigofacilito.com/videos/leer_textos_en_java
+
+5.Escribir textos en Java: http://codigofacilito.com/videos/escribir_textos_en_java
