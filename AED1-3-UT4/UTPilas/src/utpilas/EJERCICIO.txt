@@ -1,0 +1,12 @@
+
+1. Crear pila.
+
+2. Apilar datos.
+
+3. Desapilar datos.
+
+4. Preguntar si está vacía.
+
+5. Imprimir la pila llena.
+
+6. Imprimir la pila en cada desapilada.

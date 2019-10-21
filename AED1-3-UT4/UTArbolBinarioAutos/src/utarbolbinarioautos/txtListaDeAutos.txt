@@ -1,0 +1,10 @@
+Chevrolet,Camaro,JKL25698
+Chevrolet,Onix,IJK64856
+Chevrolet,Onix,HIJ46854
+Chevrolet,Onix,GHI55486
+Fiat,Uno,FGH64589
+Fiat,Uno,ABC54645
+Ford,Fiesta,BCD44952
+Hyundai,i10,CDE45324
+Hyundai,Tucson,DEF21546
+BMW,320,EFG25347

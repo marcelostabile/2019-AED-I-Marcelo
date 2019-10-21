@@ -1,0 +1,31 @@
+
+1. OK   - Cargar el archivo de datos en un �rbol.
+
+2. OK   - Cargar la lista de matriculas que se buscan.
+
+3. OK   - Obtener la lista de vehiculos que coinciden con la b�squeda.
+
+A. OK   - Recorrido PreOrden.
+
+B. OK   - Recorrido InOrden.
+
+C. OK   - Recorrido PostOrden.
+
+D. OK   - Insertar un elemento.
+
+E. OK   - Buscar un elemento.
+
+F. OK   - Eliminar un elemento.
+
+        OK - Caso 1. Elemento sin hijos (es una hoja).
+
+        OK - Caso 2. Elemento tiene un hijo.
+
+        OK - Caso 3. Elemento tiene dos hijos, que pueden ser padres de otros hijos.
+
+G. Modificar un elemento.
+
+
+
+
+
