@@ -1,4 +1,4 @@
-package parcial2fromta9;
+package ut4td2;
 
 public class TArbolBB<T> implements IArbolBB<T> {
 
