@@ -141,20 +141,19 @@ public class TElementoAB<T> implements IElementoAB<T> {
     }
 
    @Override
-    public void inOrden(Lista<T> unaLista) {
-      if (hijoIzq != null) {
+    public void inOrden(Lista<T> unaLista) { 
+        
+        if (hijoIzq != null) {
             hijoIzq.inOrden(unaLista);
-            
         }
-        Nodo<T> unNodo = new Nodo<>(this.getEtiqueta(),this.getDatos());
         
+        Nodo<T> unNodo = new Nodo<>(this.getEtiqueta(), this.getDatos());
+
         unaLista.insertar(unNodo);
-        
+
         if (hijoDer != null) {
             hijoDer.inOrden(unaLista);
         }
-
-        
     }
     
      public void preOrden(Lista<T> unaLista) {
